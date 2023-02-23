@@ -5,10 +5,8 @@ import styles from '@/styles/Home.module.css'
 
 export default function Index() {
   return (
-    <h1 className="text-3xl font-bold underline">
+    <h1 className="text-3xl font-bold ">
       Hello world!
-
-      This is for me
     </h1>
   )
 }
