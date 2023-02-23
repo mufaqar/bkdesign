@@ -11,7 +11,7 @@ const { IsNavOpen, setIsNavOpen, } = useContext(SettingsContext)
     <>
       <header className="container mx-auto flex justify-between items-center py-4">
         <Image src="/svg/logo.svg" alt="logo" width={150} height={50} />
-        <div className="flex items-center gap-4" onClick={()=>setIsNavOpen(true)}>
+        <div className="flex items-center gap-4 cursor-pointer" onClick={()=>setIsNavOpen(true)}>
           <span className="uppercase">Menu</span>
           <Image
             src="/svg/menuhamburger.svg"
@@ -33,7 +33,7 @@ const Nav = () => {
 const { setIsNavOpen } = useContext(SettingsContext)
 
   return (
-    <nav className="bg-main fixed right-0 bottom-0 w-[400px] top-0 p-10">
+    <nav className="bg-[url('/svg/nav-bg.svg')] fixed right-0 bottom-0 w-[400px] top-0 p-10">
       <div className="flex justify-end" >
         <div className="flex items-center gap-4 text-white cursor-pointer" onClick={()=>{setIsNavOpen(false)}}>
           <span className="uppercase ">Menu</span>
