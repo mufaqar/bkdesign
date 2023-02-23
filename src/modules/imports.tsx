@@ -1,0 +1,1 @@
+export {default as Home_Module} from './home-module';
