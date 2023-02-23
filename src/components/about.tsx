@@ -9,9 +9,9 @@ import Instagram from '../../public/svg/vector-3.svg';
 export default function About() {
     console.log(Teams)
     return (
-        <section className='py-20 px-4 relative'>
+        <section className='py-20 relative'>
             <Image src={Bgright} alt="" className='absolute top-0 right-0 -z-10' />
-            <div className='max-w-[360px] mx-auto'>
+            <div className='max-w-[360px] mx-auto px-4'>
                 <h2 className='md:text-[64px] md:leading-[70px] text-[32px] leading-[38px] text-center font-bold mb-5'>
                     Über Uns
                 </h2>
@@ -20,7 +20,7 @@ export default function About() {
                 </p>
             </div>
             {Teams.map((item, index) => (
-                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container mx-auto flex flex-col sm:gap-20 gap-10 items-center mt-14 rounded-[40px]`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container mx-auto px-4 flex flex-col sm:gap-20 gap-10 items-center mt-14 rounded-[40px]`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                     <div className='sm:w-1/2 w-full'>
                         <Image src={item.featured} alt="" className='w-full' />
                     </div>
