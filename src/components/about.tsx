@@ -7,6 +7,7 @@ import Linkedin from '../../public/svg/vector-2.svg';
 import Instagram from '../../public/svg/vector-3.svg';
 
 export default function About() {
+    console.log(Teams)
     return (
         <section className='py-20 px-4 relative'>
             <Image src={Bgright} alt="" className='absolute top-0 right-0 -z-10' />
@@ -19,7 +20,7 @@ export default function About() {
                 </p>
             </div>
             {Teams.map((item, index) => (
-                <div key={index} className='container mx-auto flex sm:flex-row flex-col sm:gap-20 gap-10 items-center mt-14 rounded-[40px]' style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container mx-auto flex flex-col sm:gap-20 gap-10 items-center mt-14 rounded-[40px]`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                     <div className='sm:w-1/2 w-full'>
                         <Image src={item.featured} alt="" className='w-full' />
                     </div>
@@ -60,12 +61,14 @@ export default function About() {
 
 export const Teams = [
     {
+        id: 0,
         featured: Team1,
         name: 'Benjamin Patt',
         job: 'Content Creator',
         content: '«Wähle einen Beruf, den du liebst und du brauchst keinen Tag mehr in deinem Leben zu arbeiten»',
     },
     {
+        id: 1,
         featured: Team2,
         name: 'Kevin Alihodzic',
         job: 'Content Creator',
