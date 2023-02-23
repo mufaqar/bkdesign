@@ -5,7 +5,7 @@ import Main from '../../public/images/camera.png';
 
 function Banner() {
     return (
-        <section className='bg-[url(/images/main.png)] bg-center bg-cover bg-no-repeat py-20'>
+        <section className='bg-[url(/images/main.png)] bg-center bg-cover bg-no-repeat py-32 px-4'>
             <div className='container mx-auto flex md:flex-row flex-col-reverse gap-10'>
                 <div className='md:w-1/2 w-full'>
                     <h1 className='md:text-[88px] md:leading-[92px] text-[44px] leading-[46px] md:text-left text-center font-bold mb-10'>
