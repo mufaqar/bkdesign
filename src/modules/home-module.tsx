@@ -1,9 +1,13 @@
 import React from 'react';
-import {Banner} from '../components/imports';
+import {Banner, Projects, WhatWeOffer} from '../components/imports';
 
 function Home_Module() {
   return (
-    <Banner/>
+    <>
+      <Banner/>
+      <WhatWeOffer/>
+      <Projects/>
+    </>
   )
 }
 

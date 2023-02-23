@@ -7,3 +7,17 @@
 body{
      font-family: 'Satoshi-VariableItalic'
 }
+
+@layer components{
+     .subheading{
+          @apply lg:text-[64px] text-[32px] font-bold
+     }
+}
+
+@media(min-width:450px){
+
+     .shade{
+          top: -20px;
+          padding-left: 2rem;
+     }
+}
