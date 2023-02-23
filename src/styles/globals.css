@@ -1,3 +1,9 @@
+@import "./_fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+     font-family: 'Satoshi-Light';
+}
