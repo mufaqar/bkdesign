@@ -5,8 +5,5 @@
 @tailwind utilities;
 
 body{
-     font-family: 'Satoshi-Light';
-}
-h1,h2,h3,h4,h5,h6{
-     font-family: 'Satoshi-Bold';
+     font-family: 'Satoshi-VariableItalic'
 }
