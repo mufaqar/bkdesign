@@ -12,7 +12,7 @@ const Projects = () => {
           unseren Projekten inspirieren.
         </p>
       </div>
-      <div className="relative container mx-auto grid md:h-[506px] grid-cols-1 md:grid-cols-2">
+      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-center flex-col lg:p-10">
           <Image
             src="/images/projects.png"
@@ -51,7 +51,7 @@ const Projects = () => {
       <img
         src="/images/bg-3.png"
         alt="video"
-        className="absolute hidden lg:block left-0 top-52 -z-10"
+        className="absolute hidden md:block left-0 -top-20 lg:top-40 -z-10"
       />
     </section>
   );

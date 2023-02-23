@@ -1,5 +1,5 @@
 import React from 'react';
-import {Banner, Projects, WhatWeOffer} from '../components/imports';
+import {Banner, Projects, WhatWeOffer, Contectus} from '../components/imports';
 
 function Home_Module() {
   return (
@@ -7,6 +7,7 @@ function Home_Module() {
       <Banner/>
       <WhatWeOffer/>
       <Projects/>
+      <Contectus/>
     </>
   )
 }
