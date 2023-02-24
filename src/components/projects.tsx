@@ -5,7 +5,7 @@ import React from "react";
 const Projects = () => {
   return (
     <section className="relative px-4">
-      <div className="flex justify-center items-center flex-col max-w-[600px] w-full mb-12 mx-auto ">
+      <div className="flex justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading">Projekte</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px]  text-center font-normal mb-12 text-gray-600">
           Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
@@ -23,28 +23,29 @@ const Projects = () => {
           />
         </div>
 
-        <div className="flex justify-center items-start flex-col py-10 md:p-10">
-          <div className="flex justify-center items-center flex-col md:justify-start md:items-start">
+        <div className="flex justify-center items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
+          <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
             <Link
               href="#"
               className="bg-[#EAF9F9] text-main px-6 py-3 rounded-full"
             >
               Videoproduktion
             </Link>
-            <h5 className="text-[32px] font-bold text-black mb-4 max-w-xs leading-9 text-center md:text-left mt-5">
+            <h5 className="text-xl md:text-[32px] font-bold text-black mb-4 max-w-xs md:leading-9 text-center  sm:text-left mt-5">
               Streetkultmeet video presentation
             </h5>
-            <p className=" text-sm text-gray-800 max-w-xs mt-1 text-center md:text-left">
+            <p className=" text-sm text-gray-800 max-w-xs mt-1 text-center sm:text-left">
               Streetkultmeet is an association for motor sports. We filmed a
               video for advertising and product presentation.
             </p>
           </div>
-          <div className="flex justify-center items-center"><Link
+          <div className="flex justify-center items-center md:justify-start w-full"><Link
             href="#"
             className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
           >
             Videoproduktion
-          </Link></div>
+          </Link>
+          </div>
         </div>
       </div>
       <img
