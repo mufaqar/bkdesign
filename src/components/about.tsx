@@ -7,7 +7,6 @@ import Linkedin from '../../public/svg/vector-2.svg';
 import Instagram from '../../public/svg/vector-3.svg';
 
 export default function About() {
-    console.log(Teams)
     return (
         <section className='py-20 px-4 relative'>
             <Image src={Bgright} alt="" className='absolute top-0 right-0 -z-10' />
@@ -36,17 +35,17 @@ export default function About() {
                         </p>
                         <ul className='flex gap-10 items-center mt-6 sm:justify-start justify-center'>
                             <li>
-                                <Link href={"#"}>
+                                <Link href={item.mail_url} target="_blank">
                                     <Image src={Email} alt="" width={48} height={48} />
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#">
+                                <Link href={item.linkedIn_url} target="_blank">
                                     <Image src={Linkedin} alt="" width={48} height={48} />
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#">
+                                <Link href={item.insta_url} target="_blank">
                                     <Image src={Instagram} alt="" width={48} height={48} />
                                 </Link>
                             </li>
@@ -66,6 +65,9 @@ export const Teams = [
         name: 'Benjamin Patt',
         job: 'Content Creator',
         content: '«Wähle einen Beruf, den du liebst und du brauchst keinen Tag mehr in deinem Leben zu arbeiten»',
+        mail_url: 'bpa@hmq.ch',
+        linkedIn_url: 'https://www.linkedin.com/in/benjamin-patt-6b7655201/',
+        insta_url: 'https://www.instagram.com/bk_design_gmbh/',
     },
     {
         id: 1,
@@ -73,5 +75,9 @@ export const Teams = [
         name: 'Kevin Alihodzic',
         job: 'Content Creator',
         content: '«Man lebt, um sich seine Träume zu erfüllen»',
+        mail_url: 'kal@bk-design.ch',
+        linkedIn_url: 'https://www.linkedin.com/in/kevin-alihodzic-5008b824b/',
+        insta_url: 'https://www.instagram.com/bk_design_gmbh/',
+        
     },
 ]
