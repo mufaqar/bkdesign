@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner, WhatWeOffer, Projects, About, Partner, Contectus, Data_Protection } from '../components/imports';
+import { Banner, WhatWeOffer, Projects, About, Partner, Contectus } from '../components/imports';
 
 function Home_Module() {
   return (
@@ -10,7 +10,7 @@ function Home_Module() {
       <Partner />
       <About />
       <Contectus />
-      <Data_Protection />
+      
     </>
   )
 }
