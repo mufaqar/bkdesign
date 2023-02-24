@@ -1,4 +1,5 @@
 import { SettingsContext } from "@/context/settingContext";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
@@ -6,12 +7,19 @@ import { FaBeer } from "react-icons/fa";
 
 
 function Header() {
-const { setIsNavOpen } = useContext(SettingsContext)
+  const { setIsNavOpen } = useContext(SettingsContext)
   return (
     <>
+      <Head>
+        <title>BK Design</title>
+        <meta property="og:title" content="BK Design" key="title" />
+      </Head>
+      <Head>
+        <meta property="og:title" content="BK Design" key="title" />
+      </Head>
       <header className="container mx-auto flex justify-between items-center px-4 py-4">
         <Image src="/svg/logo.svg" alt="logo" width={150} height={50} />
-        <div className="flex items-center gap-4 cursor-pointer" onClick={()=>setIsNavOpen(true)}>
+        <div className="flex items-center gap-4 cursor-pointer" onClick={() => setIsNavOpen(true)}>
           <span className="uppercase">Menu</span>
           <Image
             src="/svg/menuhamburger.svg"
@@ -22,9 +30,9 @@ const { setIsNavOpen } = useContext(SettingsContext)
           />
         </div>
       </header>
-      
-        <Nav />
-      
+
+      <Nav />
+
     </>
   );
 }
@@ -32,12 +40,12 @@ const { setIsNavOpen } = useContext(SettingsContext)
 export default Header;
 
 const Nav = () => {
-const { IsNavOpen, setIsNavOpen } = useContext(SettingsContext)
+  const { IsNavOpen, setIsNavOpen } = useContext(SettingsContext)
 
   return (
     <nav className={`bg-[url('/images/nav-bg.png')] fixed bottom-0 w-full lg:w-[400px] top-0 transition-all ease-in-out duration-400 p-10 bg-cover bg-left-bottom bg-no-repeat ${IsNavOpen ? 'right-0' : '-right-[100%]'}`}>
       <div className="flex justify-end" >
-        <div className="flex items-center gap-4 text-white cursor-pointer" onClick={()=>{setIsNavOpen(false)}}>
+        <div className="flex items-center gap-4 text-white cursor-pointer" onClick={() => { setIsNavOpen(false) }}>
           <span className="uppercase hidden md:block">Menu</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +73,9 @@ const { IsNavOpen, setIsNavOpen } = useContext(SettingsContext)
         })}
       </ul>
       <div className="flex justify-center lg:justify-start">
-      <Link href="#" className="text-main lg:ml-16 mt-16 bg-white rounded-full py-3 shadow-md px-6 text-sm uppercase">
-        Kontaktiere uns
-      </Link>
+        <Link href="#" className="text-main lg:ml-16 mt-16 bg-white rounded-full py-3 shadow-md px-6 text-sm uppercase">
+          Kontaktiere uns
+        </Link>
       </div>
     </nav>
   );
