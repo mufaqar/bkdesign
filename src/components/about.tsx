@@ -19,9 +19,9 @@ export default function About() {
                 </p>
             </div>
             {Teams.map((item, index) => (
-                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container mx-auto sm:h-[600px] flex flex-col sm:gap-6 gap-4 sm:mt-14 mt-8`}>
-                    <div className='sm:w-1/2 w-full rounded-[40px'>
-                        <Image src={item.featured} alt="" className='object-cover w-full h-full rounded-[40px]' />
+                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container mx-auto flex flex-col sm:gap-20 gap-10 items-center mt-14 rounded-[40px]`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                    <div className='sm:w-1/2 w-full'>
+                        <Image src={item.featured} alt="" className='w-full rounded-[32px]' />
                     </div>
                     <div className='sm:w-1/2 w-full h-full sm:p-14 p-6 rounded-[40px]' style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                         <div className='max-w-[392px]'>
