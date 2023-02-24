@@ -123,7 +123,7 @@ function Footer() {
         <p className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-left text-center font-normal">
           Copyright © 2023 | Powered by BK Design GmbH | Alle Rechte vorbehalten
         </p>
-        <button onClick={() => setshow(!show)} className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-right text-center font-normal">
+        <button className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-right text-center font-normal">
           Impressum & Datenschutz
         </button>
       </div>
