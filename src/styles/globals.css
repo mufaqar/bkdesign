@@ -10,7 +10,19 @@ body{
 
 @layer components{
      .subheading{
-          @apply lg:text-[64px] text-[32px] font-bold
+          @apply lg:text-[64px] text-[32px] font-bold;
+     }
+     .data-protection h3{
+          @apply md:text-[20px] md:leading-[32px] text-[16px] leading-[20px] font-bold mb-3;
+     }
+     .data-protection p{
+          @apply text-[14px] leading-[22px] font-normal mb-3;
+     }
+     .data-protection ul{
+          @apply list-disc list-inside;
+     }
+     .data-protection ul li{
+          @apply text-[14px] leading-[22px] font-normal mb-3;
      }
 }
 
