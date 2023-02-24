@@ -4,7 +4,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className='pt-10 px-4 bg-[#031717]'>
+    <footer className='mt-20 pt-10 px-4 bg-[#031717]'>
       <div className='container mx-auto grid sm:grid-cols-3 grid-cols-1 py-10'>
         <div className='flex sm:flex-col flex-row gap-12 justify-between'>
           <Link href="/">

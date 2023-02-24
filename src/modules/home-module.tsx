@@ -1,12 +1,15 @@
 import React from 'react';
-import {About, Banner, Partner} from '../components/imports';
+import {Banner, WhatWeOffer, Projects, About, Partner, Contectus} from '../components/imports';
 
 function Home_Module() {
   return (
     <>
-    <Banner/>
-    <Partner />
-    <About />
+      <Banner/>
+      <WhatWeOffer/>
+      <Projects/>
+      <Partner />
+      <About />
+      <Contectus/>
     </>
   )
 }
