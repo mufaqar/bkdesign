@@ -12,7 +12,7 @@ function Home_Module() {
     <>
       <Banner />
       <div className="flex md:mt-28 mb-10 sm:mb-20 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
-        <h1 className="subheading">Unser Angebot</h1>
+        <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal text-gray-600">
           Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
           individuellen Marketing-Bedürfnisse zu erfüllen.
@@ -45,7 +45,7 @@ function Home_Module() {
         <img
           src="/images/bg-3.png"
           alt="video"
-          className="absolute z-10 hidden lg:block left-0 lg:top-0 sm:-top-60"
+          className="absolute hidden lg:block left-0 lg:top-0 sm:-top-60"
         />
       </section>
      
