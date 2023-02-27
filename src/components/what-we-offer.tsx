@@ -1,11 +1,39 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from 'react-hook-inview'
+
 
 const WhatweOffer = ({id}:any) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  })
+  useEffect(()=>{
+    if(id === 1 && inView){
+      const wwo0 = document.querySelector('.wwo0')
+      wwo0?.classList.add('scale0')
+      wwo0?.classList.add('opacity-70')
+    }
+    if(id === 1 && !inView){
+      const wwo0 = document.querySelector('.wwo0')
+      wwo0?.classList.remove('scale0')
+      wwo0?.classList.remove('opacity-70')
+    }
+
+    if(id === 2 && inView){
+      const wwo1 = document.querySelector('.wwo1')
+      wwo1?.classList.add('scale1')
+      wwo1?.classList.add('opacity-75')
+    }
+    if(id === 2 && !inView){
+      const wwo1 = document.querySelector('.wwo1')
+      wwo1?.classList.remove('scale1')
+      wwo1?.classList.remove('opacity-75')
+    }
+  },[inView])
   
   return (
-    <section className={`relative px-4 h-screen flex flex-col justify-center items-center wwo${id}`}>
-      <div className="relative bg-[url('/images/what-we-offer-bg.png')]  container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover  grid md:h-[506px] grid-cols-1 md:grid-cols-2">
+    <section ref={ref} className={`relative p-4 h-[800px] flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
+      <div className="relative bg-[url('/images/what-we-offer-bg.png')] container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover  grid md:h-[506px] grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-start flex-col p-10 lg:p-32">
           <h5 className="text-[32px] font-bold text-white mb-4">Videoproduktion</h5>
           <p className=" text-sm text-gray-300">
@@ -20,11 +48,21 @@ const WhatweOffer = ({id}:any) => {
         <div className="flex justify-center items-center flex-col p-10">
           <Image src="/svg/Video.svg" alt="video" width={350} height={300} />
         </div>
-        <img src="/images/shadebg.png" alt="shadebh" className="absolute block md:hidden -top-3 px-7 sm:-top-7 shade pl-8 -z-10"  />
+        <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">
+          {
+            [1,2,3,4].map((dots,idx)=>{
+              return(
+                <li key={idx} className={`bg-white p-1 rounded-full ${id === idx && 'py-2'}`}></li>
+              )
+            })
+          }
+        </ul>
       </div>
-      <img src="/images/bg-2.png" alt="video" className="absolute hidden lg:block right-0 top-96 -z-10"  />
     </section>
   );
 };
 
 export default WhatweOffer;
+
+
+
