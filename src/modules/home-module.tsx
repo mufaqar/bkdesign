@@ -45,7 +45,7 @@ function Home_Module() {
         <img
           src="/images/bg-3.png"
           alt="video"
-          className="absolute hidden lg:block left-0 lg:top-0 sm:-top-60"
+          className="absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60"
         />
       </section>
      
