@@ -7,11 +7,14 @@ import {
 import React, { useEffect } from "react";
 import { useInView } from "react-hook-inview";
 
+
+
+
 function Home_Module() {
   return (
     <>
       <Banner />
-      <div className="flex md:mt-28 mb-10 sm:mb-20 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
+      <div className="flex md:mt-28 sm:mb-20 px-4 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal text-gray-600">
           Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
@@ -19,7 +22,8 @@ function Home_Module() {
         </p>
       </div>
 
-      <section className="relative">
+      
+      <section className="relative flex flex-row md:flex-col overflow-x-hidden overflow-y-hidden">
         {[1, 2, 3].map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} />;
         })}
@@ -48,7 +52,7 @@ function Home_Module() {
           className="absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60"
         />
       </section>
-     
+
       <Contectus />
     </>
   );

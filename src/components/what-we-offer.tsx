@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useInView } from 'react-hook-inview'
-
+import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from 'react-icons/md';
 
 const WhatweOffer = ({id}:any) => {
   const [ref, inView] = useInView({
@@ -30,11 +30,27 @@ const WhatweOffer = ({id}:any) => {
       wwo1?.classList.remove('opacity-75')
     }
   },[inView])
+
+  const changeMobileSlidePrevious =(id:number)=>{
+    const wwoP = document.querySelector(`.wwo${id}`);
+    const wwoN = document.querySelector(`.wwo${id}`);
+    wwoN?.classList.remove('onMobileTranslate')
+  }
+  const changeMobileSlideNext =(id:number)=>{
+    const wwoP = document.querySelector(`.wwo${id}`);
+    const wwoN = document.querySelector(`.wwo${id+1}`);
+    wwoN?.classList.add('onMobileTranslate')
+  }
   
   return (
-    <section ref={ref} className={`relative p-4 h-[800px] flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
+    <>
+    <section ref={ref} className={`relative p-4 h-[650px] md:h-[800px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
       <div className="relative bg-[url('/images/what-we-offer-bg.png')] container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover  grid md:h-[506px] grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-start flex-col p-10 lg:p-32">
+          <div className="text-white flex justify-end w-full gap-2">
+            <button className="text-main px-2 font-bold p-2 bg-white rounded-full" onClick={()=>changeMobileSlidePrevious(id)}><MdOutlineArrowBackIos/></button>
+            <button className="text-main px-2 font-bold p-2 bg-white rounded-full" onClick={()=>changeMobileSlideNext(id)}><MdOutlineArrowForwardIos/></button>
+          </div>
           <h5 className="text-[32px] font-bold text-white mb-4">Videoproduktion</h5>
           <p className=" text-sm text-gray-300">
             Ein Bild sagt mehr als tausend Worte - ein Video noch viel mehr! Mit
@@ -45,7 +61,7 @@ const WhatweOffer = ({id}:any) => {
             Umsetzung und ein Auge fürs Detail, um sicherzustellen, dass Ihre
             Botschaft genau auf den Punkt gebracht wird.</p>
         </div>
-        <div className="flex justify-center items-center flex-col p-10">
+        <div className="flex justify-center items-center flex-col p-5 md:p-10 px-36 md:px-10">
           <Image src="/svg/Video.svg" alt="video" width={350} height={300} />
         </div>
         <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">
@@ -59,6 +75,8 @@ const WhatweOffer = ({id}:any) => {
         </ul>
       </div>
     </section>
+   
+    </>
   );
 };
 

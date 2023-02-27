@@ -183,3 +183,15 @@ select {
   }
 }
 
+.onMobileTranslate{
+     position: absolute !important;
+}
+
+@media(max-width:480px){
+     .wwo2{
+          top: 37px;
+     }
+     .wwo1{
+          top: 17px;
+     }
+}
