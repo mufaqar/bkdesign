@@ -37,3 +37,27 @@ select {
      padding: 1rem;
      padding-right: 3rem;
    }
+
+   .wwo0 {
+     position: -webkit-sticky;
+     position: sticky;
+     top: 0;
+     padding: 50px;
+     font-size: 20px;
+     opacity: .5;
+   }
+   .wwo1 {
+     position: -webkit-sticky;
+     position: sticky;
+     top: 20px;
+     padding: 50px;
+     opacity: .7;
+     font-size: 20px;
+   }
+   .wwo2 {
+     position: -webkit-sticky;
+     position: sticky;
+     top: 40px;
+     padding: 50px;
+     font-size: 20px;
+   }

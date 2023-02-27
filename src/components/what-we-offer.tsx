@@ -1,17 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const WhatweOffer = () => {
+const WhatweOffer = ({id}:any) => {
+  
   return (
-    <section className="my-28 relative px-4 ">
-      <div className="flex justify-center items-center flex-col max-w-[600px] w-full mb-12 mx-auto ">
-        <h1 className="subheading">Unser Angebot</h1>
-        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal mb-12 text-gray-600">
-          Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
-          individuellen Marketing-Bedürfnisse zu erfüllen.
-        </p>
-      </div>
-      <div className="relative bg-[url('/images/what-we-offer-bg.png')] container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover  grid md:h-[506px] grid-cols-1 md:grid-cols-2">
+    <section className={`relative px-4 h-screen flex flex-col justify-center items-center wwo${id}`}>
+      <div className="relative bg-[url('/images/what-we-offer-bg.png')]  container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover  grid md:h-[506px] grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-start flex-col p-10 lg:p-32">
           <h5 className="text-[32px] font-bold text-white mb-4">Videoproduktion</h5>
           <p className=" text-sm text-gray-300">
