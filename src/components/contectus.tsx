@@ -4,7 +4,7 @@ import React from "react";
 const Contectus = () => {
   return (
      <div className="px-4">
-    <div className="mt-20 bg-[url('/images/message-bg.png')] container mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:gap-20 items-center bg-no-repeat bg-cover rounded-[32px]">
+    <div className="mt-20 bg-[url('/images/message-bg.png')] container mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:gap-20 items-center bg-no-repeat bg-position bg-cover rounded-[32px]">
       <div className="xl:p-[104px] lg:p-14 p-10">
           <div className="md:hidden">
           <Image src="/svg/Message.svg" alt="message" className="mx-auto" width={100} height={100} />

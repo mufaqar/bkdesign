@@ -1,33 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-const Projects = () => {
+const Projects = ({id}:any) => {
+
+  const myDivRef = useRef<any>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const rect = myDivRef.current.getBoundingClientRect();
+      const distanceFromTop = rect.top;
+      console.log(distanceFromTop);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+
   return (
-    <section className="relative px-4">
-      <div className="flex justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
-        <h1 className="subheading">Projekte</h1>
-        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px]  text-center font-normal mb-12 text-gray-600">
-          Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
-          unseren Projekten inspirieren.
-        </p>
-      </div>
-      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2">
+   
+      <section id="myDiv" ref={myDivRef} className={`relative container px-4 mx-auto grid grid-cols-1 md:grid-cols-2 z-20 pro${id}`}>
         <div className="flex justify-center items-center flex-col lg:p-10">
           <Image
             src="/images/projects.png"
             alt="video"
-            width={600}
+            width={650}
             height={300}
             className="rounded-[32px]"
           />
+           {/* <div className="item bg-[url('/images/projects.png')] bg-cover bg-no-repeat bg-bottom before:bg-[url('/images/projects.png')]">
+            <div className="content "></div>
+          </div> */}
         </div>
 
-        <div className="flex justify-center items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
+        <div className="flex  justify-center bg-white items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
           <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
             <Link
               href="#"
-              className="bg-[#EAF9F9] text-main px-6 py-3 rounded-full"
+              className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
             >
               Videoproduktion
             </Link>
@@ -39,21 +54,26 @@ const Projects = () => {
               video for advertising and product presentation.
             </p>
           </div>
-          <div className="flex justify-center items-center md:justify-start w-full"><Link
-            href="#"
-            className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
-          >
-            Videoproduktion
-          </Link>
+          <div className="flex justify-center sm:justify-end items-center md:justify-start w-full">
+            <Link
+              href="#"
+              className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
+            >
+              Videoproduktion
+            </Link>
           </div>
         </div>
-      </div>
-      <img
-        src="/images/bg-3.png"
-        alt="video"
-        className="absolute hidden md:block left-0 -top-20 lg:top-40 -z-10"
-      />
-    </section>
+        <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">
+          {
+            [1,2,3].map((dots,idx)=>{
+              return(
+                <li key={idx} className={`bg-main p-1 rounded-full ${id === idx && 'py-2'}`}></li>
+              )
+            })
+          }
+        </ul>
+      </section>
+    
   );
 };
 
