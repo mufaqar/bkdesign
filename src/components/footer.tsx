@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className='mt-20 pt-10 px-4 bg-[#031717]'>
       <div className='container mx-auto grid sm:grid-cols-3 grid-cols-1 py-10'>
-        <div className='flex sm:flex-col flex-row gap-12 justify-between'>
+        <div className='flex sm:flex-col flex-row sm:gap-12 gap-4 justify-between'>
           <Link href="/">
             <Image src="/svg/white-logo.svg" alt="logo" width={40} height={40} />
           </Link>
