@@ -3,6 +3,8 @@ import {
   Projects,
   WhatWeOffer,
   Contectus,
+  ProjectCrousel,
+  WhatwedoCrousel,
 } from "../components/imports";
 import React, { useEffect } from "react";
 import { useInView } from "react-hook-inview";
@@ -22,8 +24,7 @@ function Home_Module() {
         </p>
       </div>
 
-      
-      <section className="relative flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-auto">
+      <section className="relative flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {[1, 2, 3].map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} />;
         })}
@@ -34,15 +35,17 @@ function Home_Module() {
         />
       </section>
 
-      <div className="flex justify-center px-4 items-center mt-5 md:mt-0 mb-5 flex-col max-w-[600px] w-full mx-auto ">
+      
+
+      <div className="flex justify-center px-4 items-center mt-6 sm:mt-16 md:mt-0 mb-5 flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading">Projekte</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px]  text-center font-normal mb-12 text-gray-600">
           Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
           unseren Projekten inspirieren.
         </p>
       </div>
-
-      <section className="relative">
+      <section className="block md:hidden"><ProjectCrousel/></section>
+      <section className="relative hidden md:block">
         {[1, 2, 3].map((item, idx) => {
           return <Projects id={idx} key={idx} />;
         })}
