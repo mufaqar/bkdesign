@@ -35,7 +35,7 @@ const Nav = () => {
 const { IsNavOpen, setIsNavOpen } = useContext(SettingsContext)
 
   return (
-    <nav className={`bg-[url('/images/nav-bg.png')] fixed bottom-0 w-full lg:w-[400px] top-0 transition-all ease-in-out duration-400 p-10 bg-cover bg-left-bottom bg-no-repeat ${IsNavOpen ? 'right-0' : '-right-[100%]'}`}>
+    <nav className={`bg-[url('/images/nav-bg.png')] fixed bottom-0 z-50 w-full lg:w-[400px] top-0 transition-all ease-in-out duration-400 p-10 bg-cover bg-left-bottom bg-no-repeat ${IsNavOpen ? 'right-0' : '-right-[100%]'}`}>
       <div className="flex justify-end" >
         <div className="flex items-center gap-4 text-white cursor-pointer" onClick={()=>{setIsNavOpen(false)}}>
           <span className="uppercase hidden md:block">Menu</span>
