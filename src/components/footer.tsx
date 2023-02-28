@@ -1,10 +1,12 @@
+import { SettingsContext } from '@/context/settingContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Data_Protection } from './imports';
 
 function Footer() {
   const [show, setshow] = useState(false);
+  const {setOpenModel} = useContext(SettingsContext)
   return (
     <footer className='mt-20 pt-10 px-4 bg-[#031717]'>
       <div className='container mx-auto grid sm:grid-cols-3 grid-cols-1 py-10'>
@@ -123,13 +125,11 @@ function Footer() {
         <p className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-left text-center font-normal">
           Copyright © 2023 | Powered by BK Design GmbH | Alle Rechte vorbehalten
         </p>
-        <button className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-right text-center font-normal">
+        <button onClick={()=>setOpenModel(true)} className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-right text-center font-normal">
           Impressum & Datenschutz
         </button>
       </div>
-      <div className={`${show ? "flex" : "hidden"} absolute top-0 left-0 right-0 container mx-auto justify-center items-center px-4 md:px-10 py-20`}>
-      <Data_Protection />
-      </div>
+      
     </footer>
   )
 }

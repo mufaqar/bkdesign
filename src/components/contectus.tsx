@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useContext } from "react";
 
 const Contectus = () => {
-  const {setOpenModel} = useContext(SettingsContext)
+  
   return (
      <div className="px-4">
     <div className="mt-20 bg-[url('/images/message-bg.png')] container mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:gap-20 items-center bg-no-repeat bg-position bg-cover rounded-[32px]">
@@ -111,7 +111,7 @@ const Contectus = () => {
             <textarea className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg " placeholder="Nachricht" rows={7} /> 
           </div>
         </form>
-          <button onClick={()=>setOpenModel(true)}  className="text-main text-sm p-4 px-6 cursor-pointer hover:bg-gary-200 bg-white rounded-full w-full" >KONTAKTIERE UNS</button>
+          <button className="text-main text-sm p-4 px-6 cursor-pointer hover:bg-gary-200 bg-white rounded-full w-full" >KONTAKTIERE UNS</button>
       </div>
       <div className="p-10 lg:p-20 hidden md:block">
         <Image src="/svg/Message.svg" alt="message" width={400} height={200} />
