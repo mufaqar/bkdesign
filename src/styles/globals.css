@@ -76,11 +76,6 @@ select {
 
 
 
-
-
-
-
-
 @keyframes move-wave {
   0% {
     transform: translateX(0);
@@ -106,3 +101,10 @@ select {
           overflow-x: hidden;
      }
 }
+.wwo2.onMobileTranslate{
+     top: 34px;
+}
+.wwo1.onMobileTranslate{
+     top: 15px;
+}
+

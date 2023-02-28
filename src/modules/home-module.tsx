@@ -23,7 +23,7 @@ function Home_Module() {
       </div>
 
       
-      <section className="relative flex flex-row md:flex-col whatweoffer">
+      <section className="relative flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-auto">
         {[1, 2, 3].map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} />;
         })}

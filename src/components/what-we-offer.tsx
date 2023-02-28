@@ -26,6 +26,7 @@ const WhatweOffer = ({id}:any) => {
     }
     if(id === 2 && !inView){
       const wwo1 = document.querySelector('.wwo1')
+      
       wwo1?.classList.remove('scale1')
       wwo1?.classList.remove('opacity-75')
     }
