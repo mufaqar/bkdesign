@@ -5,12 +5,15 @@ import {
   Contectus,
   ProjectCrousel,
   Partner,
+  Data_Protection,
   About,
 } from "../components/imports";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useInView } from "react-hook-inview";
+import { SettingsContext } from "@/context/settingContext";
 
 function Home_Module() {
+  const {openModel} = useContext(SettingsContext)
   return (
     <>
       <Banner />
@@ -57,6 +60,10 @@ function Home_Module() {
       <Partner />
 
       <About />
+
+     {
+      openModel && <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2"> <Data_Protection/> </div>
+     }
      
       <Contectus />
     </>
