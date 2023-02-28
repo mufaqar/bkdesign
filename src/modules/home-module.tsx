@@ -4,6 +4,8 @@ import {
   WhatWeOffer,
   Contectus,
   ProjectCrousel,
+  Partner,
+  About,
 } from "../components/imports";
 import React, { useEffect } from "react";
 import { useInView } from "react-hook-inview";
@@ -51,6 +53,10 @@ function Home_Module() {
           className="absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60"
         />
       </section>
+
+      <Partner />
+
+      <About />
      
       <Contectus />
     </>
