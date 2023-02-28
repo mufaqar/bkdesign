@@ -6,8 +6,10 @@
 
 
 
-body {
-     font-family: 'Satoshi-VariableItalic'
+body,html {
+     font-family: 'Satoshi-VariableItalic';
+     /* box-sizing: border-box;
+     background: rgb(0 100 0 / 0.1) !important;  */
 }
 
 @layer components {
@@ -99,6 +101,7 @@ select {
      }
      .whatweoffer{
           overflow-x: hidden;
+          overflow-y: hidden;
      }
 }
 .wwo2.onMobileTranslate{
@@ -108,3 +111,18 @@ select {
      top: 15px;
 }
 
+.slick-dots li button{
+     background: #bdf9f9 !important;
+     width: 10px !important;
+     height: 10px !important;
+     border-radius: 100% !important;
+}
+.slick-dots li.slick-active  button{
+     background: #108989 !important;
+     width: 20px !important;
+     border-radius: 10px !important;
+
+}
+.slick-dots li button:before{
+     content: '' !important;
+}
