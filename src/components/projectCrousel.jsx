@@ -75,8 +75,8 @@ const ProjectCrousel = () => {
           );
         })}
       </Slider>
-      <button className="text-main absolute top-40 left-6 shadow-md font-bold p-2 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
-      <button className="text-main absolute top-40 right-6 shadow-md font-bold p-2 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
+      <button className="text-main absolute top-40 left-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
+      <button className="text-main absolute top-40 right-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
     </div>
   );
 };

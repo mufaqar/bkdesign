@@ -4,7 +4,6 @@ import {
   WhatWeOffer,
   Contectus,
   ProjectCrousel,
-  WhatwedoCrousel,
 } from "../components/imports";
 import React, { useEffect } from "react";
 import { useInView } from "react-hook-inview";
