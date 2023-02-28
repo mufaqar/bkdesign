@@ -84,22 +84,22 @@ const Nav = () => {
 export const navItems = [
   {
     name: "Home",
-    link: "#",
+    link: "#home",
   },
   {
     name: "Angebot",
-    link: "#",
+    link: "#offer",
   },
   {
     name: "Projekte",
-    link: "#",
+    link: "#project",
   },
   {
     name: "Partner",
-    link: "#",
+    link: "#partner",
   },
   {
     name: "Über Uns",
-    link: "#",
+    link: "#about",
   },
 ];

@@ -6,10 +6,13 @@
 
 
 
-body,html {
+body {
      font-family: 'Satoshi-VariableItalic';
      /* box-sizing: border-box;
      background: rgb(0 100 0 / 0.1) !important;  */
+}
+html{
+     scroll-behavior: smooth !important;
 }
 
 @layer components {

@@ -14,7 +14,7 @@ function Home_Module() {
   return (
     <>
       <Banner />
-      <div className="flex md:mt-28 mb-10 sm:mb-20 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
+      <div id="offer" className="flex md:mt-28 mb-10 sm:mb-20 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal text-gray-600">
           Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
@@ -35,7 +35,7 @@ function Home_Module() {
 
       
 
-      <div className="flex justify-center px-4 items-center mt-6 sm:mt-16 md:mt-0 mb-5 flex-col max-w-[600px] w-full mx-auto ">
+      <div id="project" className="flex justify-center px-4 items-center mt-6 sm:mt-16 md:mt-0 mb-5 flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading">Projekte</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px]  text-center font-normal mb-12 text-gray-600">
           Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von

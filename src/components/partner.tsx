@@ -4,7 +4,7 @@ import { Logo1, Logo2, Logo3, Logo4 } from 'public/images/imports';
 
 function Partner() {
     return (
-        <section className='py-20 '>
+        <section id="partner" className='py-20 '>
             <div className='max-w-[500px] mx-auto px-4'>
                 <h2 className='md:text-[64px] md:leading-[70px] text-[32px] leading-[38px] text-center font-bold mb-5'>
                     Partners

@@ -8,7 +8,7 @@ import Instagram from '../../public/svg/vector-3.svg';
 
 export default function About() {
     return (
-        <section className='py-20 px-4 relative'>
+        <section id="about" className='py-20 px-4 relative'>
             <Image src={Bgright} alt="" className='absolute top-0 right-0 -z-10' />
             <div className='max-w-[360px] mx-auto '>
                 <h2 className='md:text-[64px] md:leading-[70px] text-[32px] leading-[38px] text-center font-bold mb-5'>
@@ -19,11 +19,11 @@ export default function About() {
                 </p>
             </div>
             {Teams.map((item, index) => (
-                <div key={index} className={`${item.id === 0 ? "sm:flex-row" : "sm:flex-row-reverse "} container sm:h-[500px] h-[630px] mx-auto flex flex-col gap-4 mt-14 rounded-[40px]`}>
-                    <div className='sm:w-1/2 w-full h-full'>
+                <div key={index} className={`${item.id === 0 ? "" : ""} container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-14 rounded-[40px]`}>
+                    <div className={`${index === 1 ? 'md:order-2' : ''}`}>
                         <Image src={item.featured} alt="" className='w-full h-full object-cover rounded-[32px]' />
                     </div>
-                    <div className='sm:w-1/2 w-full h-full sm:p-14 p-6 rounded-[40px] grid items-center' style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                    <div className={`sm:p-14 p-6 rounded-[40px] items-center`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                         <div className='max-w-[392px]'>
                             <h3 className='md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] sm:text-left text-center font-bold mb-3'>
                                 {item.name}
