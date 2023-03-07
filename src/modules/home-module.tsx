@@ -13,11 +13,14 @@ import { useInView } from "react-hook-inview";
 import { SettingsContext } from "@/context/settingContext";
 
 function Home_Module() {
-  const {openModel} = useContext(SettingsContext)
+  const { openModel } = useContext(SettingsContext);
   return (
     <>
       <Banner />
-      <div id="offer" className="flex md:mt-28 px-4 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
+      <div
+        id="offer"
+        className="flex md:mt-20 px-4 justify-center items-center flex-col max-w-[600px] w-full mx-auto "
+      >
         <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
           Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
@@ -36,17 +39,20 @@ function Home_Module() {
         />
       </section>
 
-      
-
-      <div id="project" className="flex justify-center px-4 items-center mt-6 sm:mt-16 md:mt-0 mb-5 flex-col max-w-[600px] w-full mx-auto ">
+      <div
+        id="project"
+        className="flex  justify-center px-4 items-center mt-6 sm:mt-16 flex-col max-w-[600px] w-full mx-auto "
+      >
         <h1 className="subheading">Projekte</h1>
-        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px]  text-center font-normal mb-12 text-gray-600">
+        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-12 text-gray-600">
           Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
           unseren Projekten inspirieren.
         </p>
       </div>
-      <section className="block md:hidden"><ProjectCrousel/></section>
-      <section className="relative hidden md:block">
+      <section className="block md:hidden">
+        <ProjectCrousel />
+      </section>
+      <section className="hidden relative md:block">
         {[1, 2, 3].map((item, idx) => {
           return <Projects id={idx} key={idx} />;
         })}
@@ -61,10 +67,13 @@ function Home_Module() {
 
       <About />
 
-     {
-      openModel && <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2"> <Data_Protection/> </div>
-     }
-     
+      {openModel && (
+        <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2">
+          {" "}
+          <Data_Protection />{" "}
+        </div>
+      )}
+
       <Contectus />
     </>
   );

@@ -23,7 +23,7 @@ export default function About() {
                     <div className={`${index === 1 ? 'md:order-2' : ''}`}>
                         <Image src={item.featured} alt="" className='w-full h-full object-cover rounded-[32px]' />
                     </div>
-                    <div className={`sm:p-14 p-6 rounded-[40px] items-center`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                    <div className={`sm:p-14 p-6 rounded-[40px] items-center flex`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                         <div className='max-w-[392px]'>
                             <h3 className='md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] sm:text-left text-center font-bold mb-3'>
                                 {item.name}

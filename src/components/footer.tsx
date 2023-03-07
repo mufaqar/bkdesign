@@ -8,7 +8,7 @@ function Footer() {
   const [show, setshow] = useState(false);
   const {setOpenModel} = useContext(SettingsContext)
   return (
-    <footer className='mt-20 pt-10 px-4 bg-[#031717]'>
+    <footer className='md:mt-20 pt-10 px-4 bg-[#031717]'>
       <div className='container mx-auto grid sm:grid-cols-3 grid-cols-1 py-10'>
         <div className='flex sm:flex-col flex-row sm:gap-12 gap-4 justify-between'>
           <Link href="/">
