@@ -43,7 +43,7 @@ const WhatweOffer = ({id}:any) => {
   
   return (
     <>
-    <section ref={ref} className={`relative p-4 h-[450px] sm:h-[450px] md:h-[650px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
+    <section ref={ref} className={`relative p-4 h-[550px] sm:h-[450px] md:h-[650px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
       <div className="relative bg-[url('/images/what-we-offer-bg.png')] container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover grid md:h-[506px] grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-start flex-col p-6 md:p-10 lg:p-32">
           <div className="text-white flex justify-between py-3 w-full gap-2 md:hidden">
@@ -59,18 +59,18 @@ const WhatweOffer = ({id}:any) => {
             unserer Videoproduktion setzen wir Ihr Unternehmen perfekt in Szene.
             Wir arbeiten mit modernster Ausrüstung und einem erfahrenen Team.
           </p>
-          <p className=" text-sm text-gray-300 mt-2">Dabei setzen wir auf kreative Konzepte, eine professionelle
+          <p className=" text-sm text-gray-300 mt-2 mb-5 md:mb-0">Dabei setzen wir auf kreative Konzepte, eine professionelle
             Umsetzung und ein Auge fürs Detail, um sicherzustellen, dass Ihre
             Botschaft genau auf den Punkt gebracht wird.</p>
         </div>
         <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
           <Image src="/svg/Video.svg" alt="video" width={350} height={300} />
         </div>
-        <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">
+        <ul className="gap-2 flex md:bottom-1/2 right-1/2 md:right-2 -bottom-6 lg:right-10 absolute md:flex-col translate-x-1/2 transform md:translate-y-1/2 px-4 z-50">
           {
             [1,2,3,4].map((dots,idx)=>{
               return(
-                <li key={idx} className={`bg-white p-1 rounded-full ${id === idx && 'py-2'}`}></li>
+                <li key={idx} className={`bg-[#bdfcfc] md:bg-white p-1 rounded-full ${id === idx && 'md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0]'}`}></li>
               )
             })
           }

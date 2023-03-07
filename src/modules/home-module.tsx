@@ -28,7 +28,7 @@ function Home_Module() {
         </p>
       </div>
 
-      <section className="relative flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
+      <section className="relative -mt-10 md:mt-0 flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {[1, 2, 3].map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} />;
         })}
@@ -49,7 +49,7 @@ function Home_Module() {
           unseren Projekten inspirieren.
         </p>
       </div>
-      <section className="block md:hidden">
+      <section className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <ProjectCrousel />
       </section>
       <section className="hidden relative md:block">
@@ -69,8 +69,7 @@ function Home_Module() {
 
       {openModel && (
         <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2">
-          {" "}
-          <Data_Protection />{" "}
+          <Data_Protection />
         </div>
       )}
 

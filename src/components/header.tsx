@@ -89,7 +89,7 @@ const Nav = () => {
         })}
       </ul>
       <div className="flex justify-center lg:justify-start">
-        <Link href="#" className="text-main lg:ml-16 mt-16 bg-white rounded-full py-3 shadow-md px-6 text-sm uppercase">
+        <Link href="#contact" className="text-main lg:ml-16 mt-16 bg-white rounded-full py-3 shadow-md px-6 text-sm uppercase">
           Kontaktiere uns
         </Link>
       </div>

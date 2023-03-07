@@ -8,7 +8,7 @@ function Footer() {
   const [show, setshow] = useState(false);
   const {setOpenModel} = useContext(SettingsContext)
   return (
-    <footer className='md:mt-20 pt-10 px-4 bg-[#031717]'>
+    <footer className='md:mt-20 md:pt-10 px-4 bg-[#031717]'>
       <div className='container mx-auto grid sm:grid-cols-3 grid-cols-1 py-10'>
         <div className='flex sm:flex-col flex-row sm:gap-12 gap-4 justify-between'>
           <Link href="/">
@@ -121,7 +121,7 @@ function Footer() {
         </div>
       </div>
       <div className='container mx-auto h-[1px] bg-white/10'></div>
-      <div className='container mx-auto items-center py-4 grid sm:grid-cols-2 grid-cols-1 gap-4 justify-between'>
+      <div className='container hidden md:grid mx-auto items-center py-4 sm:grid-cols-2 grid-cols-1 gap-4 justify-between'>
         <p className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-left text-center font-normal">
           Copyright © 2023 | Powered by BK Design GmbH | Alle Rechte vorbehalten
         </p>
@@ -129,6 +129,9 @@ function Footer() {
           Impressum & Datenschutz
         </button>
       </div>
+      <p className="text-[#ADADAD] block md:hidden text-[12px] py-5 leading-[15px] sm:text-left text-center font-normal">
+      copyright © 2022 BK Design
+        </p>
       
     </footer>
   )

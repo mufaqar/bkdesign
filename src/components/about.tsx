@@ -23,18 +23,18 @@ export default function About() {
                     <div className={`${index === 1 ? 'md:order-2' : ''}`}>
                         <Image src={item.featured} alt="" className='w-full h-full object-cover rounded-[32px]' />
                     </div>
-                    <div className={`sm:p-14 p-6 rounded-[40px] items-center flex`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
+                    <div className={`sm:p-14 p-6 rounded-[40px] items-center flex md:justify-start justify-center`} style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}>
                         <div className='max-w-[392px]'>
-                            <h3 className='md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] sm:text-left text-center font-bold mb-3'>
+                            <h3 className='md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] md:text-left text-center font-bold mb-3'>
                                 {item.name}
                             </h3>
-                            <p className='md:text-[16px] md:leading-[26px] text-[14px] leading-[22px] sm:text-left text-center font-normal uppercase mb-4'>
+                            <p className='md:text-[16px] md:leading-[26px] text-[14px] leading-[22px] md:text-left text-center font-normal uppercase mb-4'>
                                 {item.job}
                             </p>
-                            <p className='md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] sm:text-left text-center font-normal'>
+                            <p className='md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal'>
                                 {item.content}
                             </p>
-                            <ul className='flex gap-10 items-center mt-6 sm:justify-start justify-center'>
+                            <ul className='flex gap-10 items-center mt-6 md:justify-start justify-center'>
                                 <li>
                                     <Link href={item.mail_url} target="_blank">
                                         <Image src={Email} alt="" width={48} height={48} />
