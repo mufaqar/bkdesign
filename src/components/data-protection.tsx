@@ -5,7 +5,7 @@ import {RxCross2} from 'react-icons/rx'
 function Data_Protection() {
     const {setOpenModel} = useContext(SettingsContext)
     return (
-        <div className='max-w-[850px]  mx-auto bg-slate-100 rounded-[32px] pb-4 pr-4 data-protection'>
+        <div className='max-w-[850px] mx-auto bg-slate-100 rounded-[32px] pb-4 pr-4 data-protection'>
             <div className=' mx-auto p-4 pr-0 md:p-8 flex justify-between item-center'>
                 <h2 className='md:text-[32px] md:leading-[38px] text-[24px] leading-[30px] font-bold'>
                     Impressum & Datenschutzerklärung

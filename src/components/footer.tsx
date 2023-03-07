@@ -2,10 +2,10 @@ import { SettingsContext } from '@/context/settingContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {useContext, useState} from 'react';
-import { Data_Protection } from './imports';
+
 
 function Footer() {
-  const [show, setshow] = useState(false);
+
   const {setOpenModel} = useContext(SettingsContext)
   return (
     <footer className='md:mt-20 md:pt-10 px-4 bg-[#031717]'>
