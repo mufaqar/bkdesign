@@ -2,12 +2,26 @@ import { SettingsContext } from "@/context/settingContext";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBeer } from "react-icons/fa";
 
 
 function Header() {
   const { setIsNavOpen } = useContext(SettingsContext)
+  const [scrollTop, setScrollTop] = useState<any>(0);
+  const [headerClr, setHeaderClr] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      let currentPosition = window.pageYOffset;
+      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+    }
+    scrollTop >= '10' ? setHeaderClr(true) : setHeaderClr(false);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  
+  }, [scrollTop]);
+
   return (
     <>
       <Head>
@@ -17,9 +31,10 @@ function Header() {
       <Head>
         <meta property="og:title" content="BK Design" key="title" />
       </Head>
-      <header className="container mx-auto flex justify-between items-center px-4 py-4">
-        <Image src="/svg/logo.svg" alt="logo" width={150} height={50} />
-        <div className="flex items-center gap-4 cursor-pointer" onClick={() => setIsNavOpen(true)}>
+      <header className={`fixed w-full top-0 z-50 ${headerClr && 'bg-white shadow-sm'}`}>
+       <div className="container mx-auto flex justify-between items-center px-4 py-4 z-10 ">
+       <Image src="/svg/logo.svg" alt="logo" width={150} height={50} className="z-[1]"/>
+        <div className="flex items-center gap-4 cursor-pointer z-[1]" onClick={() => setIsNavOpen(true)}>
           <span className="uppercase">Menu</span>
           <Image
             src="/svg/menuhamburger.svg"
@@ -29,6 +44,7 @@ function Header() {
             className="text-main"
           />
         </div>
+       </div>
       </header>
 
       <Nav />

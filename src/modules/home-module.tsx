@@ -17,9 +17,9 @@ function Home_Module() {
   return (
     <>
       <Banner />
-      <div id="offer" className="flex md:mt-28 mb-10 sm:mb-20 lg:mb-0 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
+      <div id="offer" className="flex md:mt-28 px-4 justify-center items-center flex-col max-w-[600px] w-full mx-auto ">
         <h1 className="subheading ">Unser Angebot</h1>
-        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal text-gray-600">
+        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
           Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
           individuellen Marketing-Bedürfnisse zu erfüllen.
         </p>
@@ -32,7 +32,7 @@ function Home_Module() {
         <img
           src="/images/bg-2.png"
           alt="video"
-          className="absolute hidden lg:block right-0 top-96 -z-10"
+          className="absolute hidden lg:block right-0 top-[16rem] -z-10"
         />
       </section>
 
