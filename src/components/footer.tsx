@@ -72,29 +72,29 @@ function Footer() {
               </Link>
             </li>
             <li className="text-[#ADADAD]">
-              <Link href="#">
+              <Link href="#offer">
                 Angebot
               </Link>
             </li>
             <li className="text-[#ADADAD]">
-              <Link href="#">
+              <Link href="#project">
                 Projekte
               </Link>
             </li>
           </ul>
           <ul className='grid gap-4 items-center'>
             <li className="text-[#ADADAD]">
-              <Link href="#">
+              <Link href="#partner">
                 Partner
               </Link>
             </li>
             <li className="text-[#ADADAD]">
-              <Link href="#">
+              <Link href="#about">
                 Über Uns
               </Link>
             </li>
             <li className="text-[#ADADAD]">
-              <Link href="#">
+              <Link href="#contact">
                 Kontaktiere uns
               </Link>
             </li>
