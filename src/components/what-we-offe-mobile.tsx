@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useInView } from 'react-hook-inview'
 import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 
-const WhatweOffer = ({id, item}:any) => {
+const WhatweOfferMobile = ({id, item}:any) => {
   const [ref, inView] = useInView({
     threshold: 0.5,
   })
@@ -54,7 +54,7 @@ const WhatweOffer = ({id, item}:any) => {
   
   return (
     <>
-    <section ref={ref} className={`relative z-[22] p-4 sm:h-[450px] md:h-[650px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
+    <section ref={ref} className={`relative z-[22] p-4 h-[550px] sm:h-[450px] md:h-[650px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-center items-center wwo${id}`}>
       <div className="relative bg-[url('/images/what-we-offer-bg.png')] container mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover grid md:h-[506px] grid-cols-1 md:grid-cols-2">
         <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
           <div className="text-white flex justify-between py-3 w-full gap-2 md:hidden">
@@ -94,7 +94,7 @@ const WhatweOffer = ({id, item}:any) => {
   );
 };
 
-export default WhatweOffer;
+export default WhatweOfferMobile;
 
 
 

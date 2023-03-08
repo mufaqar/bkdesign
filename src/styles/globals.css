@@ -162,20 +162,30 @@ select {
 
 @media(max-width:480px){
      .wwo2{
-          top: 37px;
+          top: 0 !important;
+     }
+     .wwo3{
+          top: 0 !important;
      }
      .wwo1{
-          top: 0px;
+          top: 0 !important
      }
      .wwo0{
-          top: 0px !important;
+          top: 0 !important
+     }
+     .wwo0{
+          top: 0 !important;
      }
      .whatweoffer{
           overflow-x: hidden;
           overflow-y: hidden;
      }
 }
-@media(min-width:481px) and (max-width: 768px){
+
+
+
+
+/* @media(min-width:481px) and (max-width: 768px){
      .wwo2{
           top: 37px;
      }
@@ -185,14 +195,14 @@ select {
      .wwo0{
           top: 0px !important;
      }
-}
+} */
 
-.wwo2.onMobileTranslate{
+/* .wwo2.onMobileTranslate{
      top: 34px;
 }
 .wwo1.onMobileTranslate{
      top: 15px;
-}
+} */
 
 .slick-dots li button{
      background: #bdf9f9 !important;

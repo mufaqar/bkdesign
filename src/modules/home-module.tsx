@@ -46,7 +46,7 @@ function Home_Module() {
         </p>
       </div>
 
-      <section ref={myDivRef} className="relative -mt-10 md:mt-0 flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
+      <section ref={myDivRef} className="relative justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {WhatWeOfferData.map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} item={item}/>;
         })}
@@ -68,7 +68,7 @@ function Home_Module() {
         </p>
       </div>
       <section className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
-        <ProjectCrousel />
+        <ProjectCrousel projectData={projectData}/>
       </section>
       <section className="hidden relative md:block">
         {projectData.map((item, idx) => {
