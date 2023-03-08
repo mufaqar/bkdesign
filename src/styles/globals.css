@@ -90,41 +90,21 @@ select {
 .wwo0 {
      position: -webkit-sticky;
      position: sticky;
-     top: 2rem;
-     font-size: 20px;
-     /* background: url('../../public//images/bg-2.png');
-     background-repeat: no-repeat;
-     background-position: right bottom;
-     background-size: contain; */
-
+     top: 5rem;
+     font-size: 20px
 }
-/* .wwo0::before {
-     content: " ";
-     background: url('../../public//images/bg-2.png');
-     background-repeat: no-repeat;
-     background-position: right bottom;
-     background-size: contain;
-     color: red;
-     font-weight: bold;
-     width: 400px;
-     height: 600px;
-     position: absolute;
-     right: 0;
-     bottom: -18rem;
-     z-index: -1;
-   } */
 
 .wwo1 {
      position: -webkit-sticky;
      position: sticky;
-     top: 3rem;
+     top: 6rem;
      font-size: 20px;
 }
 
 .wwo2 {
      position: -webkit-sticky;
      position: sticky;
-     top: 4.2rem;
+     top: 7.2rem;
      font-size: 20px;
 }
 
@@ -160,7 +140,7 @@ select {
      left: 0;
 }
 
-@media(max-width:480px){
+@media(max-width:768px){
      .wwo2{
           top: 0 !important;
      }
@@ -168,13 +148,10 @@ select {
           top: 0 !important;
      }
      .wwo1{
-          top: 0 !important
+          top: 0px !important
      }
      .wwo0{
           top: 0 !important
-     }
-     .wwo0{
-          top: 0 !important;
      }
      .whatweoffer{
           overflow-x: hidden;
