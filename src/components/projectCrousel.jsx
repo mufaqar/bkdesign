@@ -33,7 +33,7 @@ const ProjectCrousel = () => {
           return (
             <section
               key={idx}
-              className={`relative container px-4 mx-auto grid grid-cols-1 md:grid-cols-2`}
+              className={`relative md:container px-4 mx-auto grid grid-cols-1`}
             >
               <div className="flex relative justify-center items-center flex-col lg:p-10">
                 <Image
@@ -46,7 +46,7 @@ const ProjectCrousel = () => {
                 
               </div>
 
-              <div className="flex  justify-center  items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-7 md:p-10">
+              <div className="flex  justify-center px-4 items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-7 md:p-10">
                 <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
                   <Link
                     href="#"
@@ -75,8 +75,8 @@ const ProjectCrousel = () => {
           );
         })}
       </Slider>
-      <button className="text-main absolute top-40 left-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
-      <button className="text-main absolute top-40 right-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
+      <button className="text-main absolute top-40 sm:top-72 left-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
+      <button className="text-main absolute top-40 sm:top-72 right-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
     </div>
   );
 };
