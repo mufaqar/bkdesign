@@ -51,7 +51,6 @@ const WhatweOffer = ({ id, item }: any) => {
   const changeMobileSlideNext = (id: number) => {
     const wwoN = document.querySelector(`.wwo${id + 1}`);
     wwoN?.classList.add("onMobileTranslate");
-    
   };
 
   return (
