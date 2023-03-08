@@ -8,12 +8,30 @@ import {
   Data_Protection,
   About,
 } from "../components/imports";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useInView } from "react-hook-inview";
 import { SettingsContext } from "@/context/settingContext";
 
+
 function Home_Module() {
-  const { openModel } = useContext(SettingsContext);
+  const { openModel, setProjectPostion, projectpostion } = useContext(SettingsContext);
+  console.log("🚀 ~ file: home-module.tsx:18 ~ Home_Module ~ projectpostion:", projectpostion)
+  const myDivRef = useRef<any>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const rect = myDivRef.current.getBoundingClientRect();
+      const distanceFromTop = rect.top;
+      // console.log(distanceFromTop);
+      setProjectPostion(distanceFromTop)
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <Banner />
@@ -28,14 +46,14 @@ function Home_Module() {
         </p>
       </div>
 
-      <section className="relative -mt-10 md:mt-0 flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
+      <section ref={myDivRef} className="relative -mt-10 md:mt-0 flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {[1, 2, 3].map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} />;
         })}
         <img
           src="/images/bg-2.png"
           alt="video"
-          className="absolute hidden lg:block right-0 top-[16rem] -z-10"
+          className={` hidden lg:block right-0 top-[16rem] -z-[21] ${projectpostion <=  70 ? projectpostion <= -1230 ? 'absolute' : 'fixed' : 'absolute'}`}
         />
       </section>
 
@@ -59,7 +77,7 @@ function Home_Module() {
         <img
           src="/images/bg-3.png"
           alt="video"
-          className="absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60"
+          className={`absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60 `}
         />
       </section>
 

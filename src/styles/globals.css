@@ -90,29 +90,49 @@ select {
 .wwo0 {
      position: -webkit-sticky;
      position: sticky;
-     top: 0;
+     top: 2rem;
      font-size: 20px;
+     /* background: url('../../public//images/bg-2.png');
+     background-repeat: no-repeat;
+     background-position: right bottom;
+     background-size: contain; */
+
 }
+/* .wwo0::before {
+     content: " ";
+     background: url('../../public//images/bg-2.png');
+     background-repeat: no-repeat;
+     background-position: right bottom;
+     background-size: contain;
+     color: red;
+     font-weight: bold;
+     width: 400px;
+     height: 600px;
+     position: absolute;
+     right: 0;
+     bottom: -18rem;
+     z-index: -1;
+   } */
 
 .wwo1 {
      position: -webkit-sticky;
      position: sticky;
-     top: 20px;
+     top: 3rem;
      font-size: 20px;
 }
 
 .wwo2 {
      position: -webkit-sticky;
      position: sticky;
-     top: 50px;
+     top: 4rem;
      font-size: 20px;
 }
 
-.scale0 {
+.scale0>div {
      scale: .95;
 }
 
-.scale1 {
+.scale1>div {
      scale: .97;
 }
 
@@ -142,13 +162,28 @@ select {
           top: 37px;
      }
      .wwo1{
-          top: 17px;
+          top: 0px;
+     }
+     .wwo0{
+          top: 0px !important;
      }
      .whatweoffer{
           overflow-x: hidden;
           overflow-y: hidden;
      }
 }
+@media(min-width:481px) and (max-width: 768px){
+     .wwo2{
+          top: 37px;
+     }
+     .wwo1{
+          top: 0px;
+     }
+     .wwo0{
+          top: 0px !important;
+     }
+}
+
 .wwo2.onMobileTranslate{
      top: 34px;
 }
@@ -174,7 +209,6 @@ select {
 
 
 
-.mainbg{}
 
 
 
