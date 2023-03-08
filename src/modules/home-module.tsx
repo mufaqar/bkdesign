@@ -47,8 +47,8 @@ function Home_Module() {
       </div>
 
       <section ref={myDivRef} className="relative -mt-10 md:mt-0 flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
-        {[1, 2, 3].map((item, idx) => {
-          return <WhatWeOffer id={idx} key={idx} />;
+        {WhatWeOfferData.map((item, idx) => {
+          return <WhatWeOffer id={idx} key={idx} item={item}/>;
         })}
         <img
           src="/images/bg-2.png"
@@ -71,8 +71,8 @@ function Home_Module() {
         <ProjectCrousel />
       </section>
       <section className="hidden relative md:block">
-        {[1, 2, 3].map((item, idx) => {
-          return <Projects id={idx} key={idx} />;
+        {projectData.map((item, idx) => {
+          return <Projects id={idx} key={idx} item={item}/>;
         })}
         <img
           src="/images/bg-3.png"
@@ -101,8 +101,56 @@ export default Home_Module;
 
 
 
-const projectData = [
+export const projectData = [
   {
-    
+    title:'Streetkultmeet video presentation',
+    description:'Streetkultmeet is an association for motor sports. We filmed a video for advertising and product presentation.',
+    viewProjectLink:'#',
+    image:'/images/projects.png',
+    tag:"Videoproduktion"
+  },
+  {
+    title:'Passion website design & developement',
+    description:'Passion is a young marketing startup. We have developed a website with a unique design that reflects their bright style.',
+    viewProjectLink:'#',
+    image:'/images/p2.png',
+    tag:"Webdesign",
+    tag1:"Webentwicklung"
+  },
+  {
+    title:'Thusnerfest branding',
+    description:'Thusnerfest is an annual hip hop music festival. We have developed a stylish branding, which will be used for advertising in the future.',
+    viewProjectLink:'#',
+    image:'/images/p3.png',
+    tag:'Branding'
   }
+]
+
+const WhatWeOfferData = [
+  {
+    title:"Videoproduktion",
+    detail1: "Ein Bild sagt mehr als tausend Worte - ein Video noch viel mehr! Mit unserer Videoproduktion setzen wir Ihr Unternehmen perfekt in Szene. ",
+    detail2: "Wir arbeiten mit modernster Ausrüstung und einem erfahrenen Team. Dabei setzen wir auf kreative Konzepte, eine professionelle Umsetzung und ein Auge fürs Detail, um sicherzustellen, dass Ihre Botschaft genau auf den Punkt gebracht wird.",
+    logo: "/svg/Video.svg",
+  },
+  {
+    title:"Branding",
+    detail1: "Unser Branding gibt Ihrem Unternehmen ein unverwechselbares Gesicht. Wir entwerfen Logos, Visitenkarten, Briefpapier und andere Materialien, die perfekt zu Ihrem Unternehmen passen.",
+    detail2: "Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass wir Ihre Vision und Werte vollständig verstehen und in das Design integrieren",
+    detail3: "Sie Ihrem Unternehmen mit unserem Branding das gewisse Etwas!",
+    logo: "/svg/Show.svg",
+  },
+  {
+    title:"Webdesign",
+    detail1: "Unser Webdesign zielt darauf ab, ein beeindruckendes Online-Erlebnis für Ihre Zielgruppe zu erschaffen. Wir verwenden modernste Technologie, um eine attraktive Benutzeroberfläche zu erstellen, die den Bedürfnissen Ihrer Kunden entspricht. ",
+    detail2: "Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass das Design Ihrer Website Ihre Marke widerspiegelt. ",
+    detail3: "Gemeinsam gestalten wir eine Webseite, die zu Ihnen passt.",
+    logo: "/svg/Activity.svg",
+  },
+  {
+    title:"Webentwicklung",
+    detail1: "Unsere Webentwicklung bietet eine optimale Umsetzung und Programmierung des Webdesigns. Wir verwenden die neuesten Technologien und Standards, um sicherzustellen, dass Ihre Website auf jedem Gerät und in jedem Browser perfekt funktioniert. Darüber hinaus sorgen wir mit einem SSL-Zertifikat für maximale Sicherheit Ihrer Website und schützen die Daten Ihrer Kunden. ",
+    detail2: "Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass Ihre Bedürfnisse und Anforderungen in jeder Phase des Entwicklungsprozesses berücksichtigt werden. Sie können sich sicher sein, dass Ihre Website nicht nur schön aussieht, sondern auch reibungslos funktioniert.",
+    logo: "/svg/Setting.svg",
+  },
 ]

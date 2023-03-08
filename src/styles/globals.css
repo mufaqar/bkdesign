@@ -124,16 +124,19 @@ select {
 .wwo2 {
      position: -webkit-sticky;
      position: sticky;
-     top: 4rem;
+     top: 4.2rem;
      font-size: 20px;
 }
 
 .scale0>div {
-     scale: .95;
+     scale: .92;
 }
 
 .scale1>div {
-     scale: .97;
+     scale: .94;
+}
+.scale2>div {
+     scale: .96;
 }
 
 .pro0, .pro1, .pro2{

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
-const Projects = ({id}:any) => {
+const Projects = ({id, item}:any) => {
+console.log("🚀 ~ file: projects.tsx:6 ~ Projects ~ item:", item)
 
   const myDivRef = useRef<any>(null);
 
@@ -27,7 +28,7 @@ const Projects = ({id}:any) => {
       <section id="myDiv" ref={myDivRef} className={`relative container px-4 mx-auto grid grid-cols-1 md:grid-cols-2 z-20 pro${id}`}>
         <div className="flex justify-center items-center flex-col lg:p-10">
           <Image
-            src="/images/projects.png"
+            src={item?.image}
             alt="video"
             width={650}
             height={300}
@@ -40,23 +41,33 @@ const Projects = ({id}:any) => {
 
         <div className="flex  justify-center bg-white items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
           <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
+            <div className="flex gap-3">
             <Link
               href="#"
               className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
             >
-              Videoproduktion
+              {item?.tag}
             </Link>
-            <h5 className="text-xl md:text-[32px] font-bold text-black mb-4 max-w-xs md:leading-9 text-center  sm:text-left mt-5">
-              Streetkultmeet video presentation
+            { 
+             item?.tag1 && 
+              <Link
+              href="#"
+              className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
+            >
+              {item?.tag1}
+            </Link>
+            }
+            </div>
+            <h5 className="text-xl md:text-[32px] font-bold text-black mb-4 max-w-sm md:leading-9 text-center  sm:text-left mt-5">
+              {item?.title}
             </h5>
             <p className=" text-sm text-gray-800 max-w-xs mt-1 text-center sm:text-left">
-              Streetkultmeet is an association for motor sports. We filmed a
-              video for advertising and product presentation.
+              {item?.description}
             </p>
           </div>
           <div className="flex justify-center sm:justify-end items-center md:justify-start w-full">
             <Link
-              href="#"
+              href={item?.viewProjectLink}
               className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
             >
               Videoproduktion
