@@ -59,7 +59,7 @@ const WhatweOffer = ({ id, item }: any) => {
 
       <section
         ref={ref}
-        className={`relative z-[22] p-4 pt-6 h-[590px] md:h-[620px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-start items-start wwo${id}`}
+        className={`relative z-[22] p-4 pt-6 h-[590px] md:h-auto min-w-full flex flex-col transition-all duration-800 ease-in-out justify-start items-start wwo${id}`}
       >
         <div className="relative bg-[url('/images/what-we-offer-bg.png')] w-full md:container md:mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover grid md:h-[506px] grid-cols-1 md:grid-cols-2">
           <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">

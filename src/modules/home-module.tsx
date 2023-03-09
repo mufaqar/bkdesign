@@ -35,9 +35,10 @@ function Home_Module() {
   return (
     <>
       <Banner />
+      <section className="relative">
       <div
         id="offer"
-        className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  ${projectpostion >= -1850 ? 'md:sticky md:top-[65px]' : 'absolute'}`}
+        className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto md:sticky md:top-[75px]`}
       >
         <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
@@ -46,7 +47,7 @@ function Home_Module() {
         </p>
       </div>
 
-      <section ref={myDivRef} className="relative justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
+      <div ref={myDivRef} className="relative justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {WhatWeOfferData.map((item, idx) => {
           return <WhatWeOffer id={idx} key={idx} item={item}/>;
         })}
@@ -55,6 +56,7 @@ function Home_Module() {
           alt="video"
           className={` hidden lg:block right-0 top-[16rem] -z-[21] ${projectpostion <=  70 ? projectpostion <= -1230 ? 'absolute' : 'fixed' : 'absolute'}`}
         />
+      </div>
       </section>
 
       <div
