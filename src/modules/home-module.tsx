@@ -37,7 +37,7 @@ function Home_Module() {
       <Banner />
       <div
         id="offer"
-        className="flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[600px] w-full mx-auto "
+        className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  ${projectpostion >= -1850 ? 'md:sticky md:top-[65px]' : 'absolute'}`}
       >
         <h1 className="subheading ">Unser Angebot</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">

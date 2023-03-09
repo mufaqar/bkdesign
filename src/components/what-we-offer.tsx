@@ -5,7 +5,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const WhatweOffer = ({ id, item }: any) => {
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: 0.7,
   });
 
   useEffect(() => {
@@ -55,6 +55,8 @@ const WhatweOffer = ({ id, item }: any) => {
 
   return (
     <>
+      
+
       <section
         ref={ref}
         className={`relative z-[22] p-4 pt-6 h-[590px] md:h-[620px] min-w-full flex flex-col transition-all duration-800 ease-in-out justify-start items-start wwo${id}`}
