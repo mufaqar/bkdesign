@@ -12,24 +12,25 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useInView } from "react-hook-inview";
 import { SettingsContext } from "@/context/settingContext";
 import Image from "next/image";
-import WhatsWeOfferDesktop from '../components/what-we-offer-ds'
+import WhatsWeOfferDesktop from "../components/what-we-offer-ds";
 
 function Home_Module() {
   const { openModel, setProjectPostion, projectpostion } =
-    useContext(SettingsContext);
-  
+  useContext(SettingsContext);
+  console.log("🚀 ~ file: home-module.tsx:19 ~ Home_Module ~ projectpostion:", projectpostion)
+
   const myDivRef = useRef<any>(null);
+  // const [ref, inView] = useInView({ threshold: 0.5,});
+  // console.log("🚀 ~ file: home-module.tsx:23 ~ Home_Module ~ inView:", inView)
 
   useEffect(() => {
     const handleScroll = () => {
       const rect = myDivRef.current.getBoundingClientRect();
       const distanceFromTop = rect.top;
-      // console.log(distanceFromTop);
       setProjectPostion(distanceFromTop);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -38,43 +39,46 @@ function Home_Module() {
   return (
     <>
       <Banner />
-    
-      <section className="relative">
-      <div
-        id="offer"
-        className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto md:sticky md:top-[75px]`}
-      >
-        <h1 className="subheading ">Unser Angebot</h1>
-        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
-          Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
-          individuellen Marketing-Bedürfnisse zu erfüllen.
-        </p>
-      </div>
+
+      <section className={` md:sticky md:top-[75px] ${projectpostion >= 600 ? 'block' : 'hidden'}`}>
         <div
-          ref={myDivRef}
-          className="relative  justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip"
+          id="offer"
+          className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto `}
+        >
+          <h1 className="subheading ">Unser Angebot</h1>
+          <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
+            Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
+            individuellen Marketing-Bedürfnisse zu erfüllen.
+          </p>
+        </div>
+      </section>
+
+
+      <section className="relative">
+        <div
+          
+          className="relative md:hidden justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip"
         >
           {WhatWeOfferData.map((item, idx) => {
             return <WhatWeOffer id={idx} key={idx} item={item} />;
           })}
 
-          <img
-            src="/images/bg-2.png"
-            alt="video"
-            className={` hidden lg:block right-0 top-[16rem] -z-[21] ${
-              projectpostion <= 70
-                ? projectpostion <= -2300
-                  ? "absolute"
-                  : "fixed"
-                : "absolute"
-            }`}
-          />
         </div>
       </section>
 
-      {/* <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData}/> */}
+     <section className="relative">
+      <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData}/>
+      <img
+            src="/images/bg-2.png"
+            alt="video"
+            className={` hidden lg:block right-0 top-[16rem] -z-[21]
+             ${ projectpostion <= 2600 && projectpostion >= 200 ? "fixed" : "absolute" }
+            `}
+          />
+      </section>
+  
 
-      <section className="bg-white">
+      <section className="bg-white" ref={myDivRef}>
         <div
           id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
@@ -86,7 +90,7 @@ function Home_Module() {
           </p>
         </div>
       </section>
-      <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
+      <div  className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <ProjectCrousel projectData={projectData} />
       </div>
       <section className="bg-white">
