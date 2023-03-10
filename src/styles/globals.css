@@ -107,6 +107,14 @@ select {
      top: 18rem;
      font-size: 20px;
 }
+.wwo3{
+     position: -webkit-sticky;
+     position: sticky;
+     top: 19.5rem;
+     font-size: 20px; 
+}
+
+
 
 .scale0>div {
      scale: .92;

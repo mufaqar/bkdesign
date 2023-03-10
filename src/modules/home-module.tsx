@@ -8,7 +8,7 @@ import {
   Data_Protection,
   About,
 } from "../components/imports";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useInView } from "react-hook-inview";
 import { SettingsContext } from "@/context/settingContext";
 
@@ -23,7 +23,7 @@ function Home_Module() {
       const rect = myDivRef.current.getBoundingClientRect();
       const distanceFromTop = rect.top;
       // console.log(distanceFromTop);
-      setProjectPostion(distanceFromTop)
+      setProjectPostion(distanceFromTop);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,6 +32,8 @@ function Home_Module() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
+
   return (
     <>
       <Banner />
@@ -49,19 +51,20 @@ function Home_Module() {
 
       <div ref={myDivRef} className="relative justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip">
         {WhatWeOfferData.map((item, idx) => {
-          return <WhatWeOffer id={idx} key={idx} item={item}/>;
+          return <WhatWeOffer id={idx} key={idx} item={item} />;
         })}
+       
         <img
           src="/images/bg-2.png"
           alt="video"
-          className={` hidden lg:block right-0 top-[16rem] -z-[21] ${projectpostion <=  70 ? projectpostion <= -1230 ? 'absolute' : 'fixed' : 'absolute'}`}
+          className={` hidden lg:block right-0 top-[16rem] -z-[21] ${projectpostion <=  70 ? projectpostion <= -2300 ? 'absolute' : 'fixed' : 'absolute'}`}
         />
       </div>
       </section>
 
       <div
         id="project"
-        className="flex  justify-center px-4 items-center mt-6 sm:mt-16 flex-col max-w-[600px] w-full mx-auto "
+        className="flex justify-center px-4 items-center mt-6 sm:mt-16 flex-col max-w-[600px] w-full mx-auto "
       >
         <h1 className="subheading">Projekte</h1>
         <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-12 text-gray-600">
@@ -69,10 +72,11 @@ function Home_Module() {
           unseren Projekten inspirieren.
         </p>
       </div>
-      <section className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
+      <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <ProjectCrousel projectData={projectData}/>
-      </section>
-      <section className="hidden relative md:block">
+      </div>
+      <section className="bg-white">
+      <div className="hidden relative md:block">
         {projectData.map((item, idx) => {
           return <Projects id={idx} key={idx} item={item}/>;
         })}
@@ -81,6 +85,7 @@ function Home_Module() {
           alt="video"
           className={`absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60 `}
         />
+      </div>
       </section>
 
       <Partner />

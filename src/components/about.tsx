@@ -8,7 +8,7 @@ import Instagram from '../../public/svg/vector-3.svg';
 
 export default function About() {
     return (
-        <section id="about" className='py-20 px-4 relative'>
+        <section id="about" className='py-20 px-4 pb-40 relative'>
             <Image src={Bgright} alt="" className='absolute top-0 right-0 -z-10' />
             <div className='max-w-[360px] mx-auto '>
                 <h2 className='md:text-[64px] md:leading-[70px] text-[32px] leading-[38px] text-center font-bold mb-5'>
