@@ -210,3 +210,51 @@ select {
 
 
 
+:root {
+	--cards: 4;
+	--cardHeight: 500px;
+	--cardTopPadding: 1.5em;
+	--cardMargin: 4vw;
+}
+
+
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+	--index: 1;
+}
+#card2 {
+	--index: 2;
+}
+#card3 {
+	--index: 3;
+}
+#card4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: 16rem;
+	padding-top: calc(var(--index) * var(--cardTopPadding));
+}
+
+.card-body {
+	box-sizing: border-box;
+	height: var(--cardHeight);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s;
+}
+

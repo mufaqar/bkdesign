@@ -91,6 +91,10 @@ const WhatweOffer = ({ id, item }: any) => {
           <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
             <Image src={item?.logo} alt="video" width={350} height={300} />
           </div>
+         
+         
+         
+         
           <ul className="gap-2 flex md:bottom-1/2 md:bg-transparent bg-white  right-1/2 md:right-4 -bottom-6 lg:right-10 absolute md:flex-col translate-x-1/2 transform md:translate-y-1/2 px-4 z-50">
             {[1, 2, 3, 4].map((dots, idx) => {
               return (
@@ -105,6 +109,7 @@ const WhatweOffer = ({ id, item }: any) => {
             })}
           </ul>
         </div>
+
 
         {
           id === 1 && <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-4 -z-[1]"><AfterEffect/><AfterEffect/></div>
