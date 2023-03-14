@@ -76,7 +76,7 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
                     return (
                       <li
                         key={id}
-                        className={`bg-[#457575] p-1 rounded-full  [&:nth-child(3)]:md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0] `}
+                        className={`bg-[#457575] p-1 rounded-full  [&:nth-child(2)]:md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0] `}
                       > </li>
                       
                     );
@@ -113,7 +113,7 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
                   return (
                     <li
                       key={id}
-                      className={`bg-[#457575] p-1 rounded-full  [&:nth-child(4)]:md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0] `}
+                      className={`bg-[#457575] p-1 rounded-full  [&:nth-child(3)]:md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0] `}
                     > </li>
                     
                   );

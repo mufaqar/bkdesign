@@ -19,6 +19,8 @@ function Home_Module() {
   useContext(SettingsContext);
   console.log("🚀 ~ file: home-module.tsx:19 ~ Home_Module ~ projectpostion:", projectpostion)
 
+  const [p,setP] = useState<number>()
+
   const myDivRef = useRef<any>(null);
   // const [ref, inView] = useInView({ threshold: 0.5,});
   // console.log("🚀 ~ file: home-module.tsx:23 ~ Home_Module ~ inView:", inView)
@@ -35,6 +37,12 @@ function Home_Module() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(()=>{
+    setP(940-projectpostion)
+  },[projectpostion,p])
+
+
 
   return (
     <>
@@ -71,8 +79,8 @@ function Home_Module() {
       <img
             src="/images/bg-2.png"
             alt="video"
-            className={` hidden lg:block right-0 top-[16rem] -z-[21]
-             ${ projectpostion <= 2600 && projectpostion >= 200 ? "fixed" : "absolute" }
+            className={` hidden lg:block right-0  -z-[21]
+             ${ projectpostion <= 2600 && projectpostion >= 200 ? "fixed top-[25rem]" : "absolute top-[13rem]" }
             `}
           />
       </section>
