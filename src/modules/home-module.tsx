@@ -48,7 +48,7 @@ function Home_Module() {
     <>
       <Banner />
 
-      <section className={` md:sticky md:top-[75px] ${projectpostion >= 600 ? 'block' : 'hidden'}`}>
+      <section className={` md:sticky md:top-[75px] ${projectpostion >= 600 ? 'block' : projectpostion === 'null' ? 'block' :'_hidden'}`}>
         <div
           id="offer"
           className={`flex md:mt-20 mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto `}

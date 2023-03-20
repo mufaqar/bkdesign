@@ -258,3 +258,6 @@ select {
 	transition: all 0.5s;
 }
 
+._hidden{
+     display: none !important;
+}
