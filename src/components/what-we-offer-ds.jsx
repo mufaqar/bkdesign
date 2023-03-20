@@ -1,6 +1,5 @@
 import { useInView } from "react-hook-inview";
 import Image from "next/image";
-import React, { useContext, useEffect, useRef } from "react";
 
 
 const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
