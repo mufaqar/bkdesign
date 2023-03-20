@@ -72,17 +72,18 @@ function Home_Module() {
           })}
 
         </div>
+        <img
+            src="/images/bg-2.png"
+            alt="video"
+            className={` hidden lg:block right-0  -z-[21]
+             ${ projectpostion <= 2600 && projectpostion >= 200 ? "fixed top-[24rem]" : "absolute top-[8rem]" }
+            `}
+          />
       </section>
 
      <section className="relative">
       <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData}/>
-      <img
-            src="/images/bg-2.png"
-            alt="video"
-            className={` hidden lg:block right-0  -z-[21]
-             ${ projectpostion <= 2600 && projectpostion >= 200 ? "fixed top-[25rem]" : "absolute top-[13rem]" }
-            `}
-          />
+      
       </section>
   
 

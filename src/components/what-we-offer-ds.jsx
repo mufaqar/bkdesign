@@ -1,12 +1,13 @@
 import { useInView } from "react-hook-inview";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+
 
 const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
-   const [ref1, inView1] = useInView({ threshold: 0.8,});
-   const [ref2, inView2] = useInView({ threshold: 0.8,});
-   const [ref3, inView3] = useInView({ threshold: 0.8,});
-   const [ref4, inView4] = useInView({ threshold: 0.8,});
+   const [ref1, inView1] = useInView({ threshold: 1,});
+   const [ref2, inView2] = useInView({ threshold: 1,});
+   const [ref3, inView3] = useInView({ threshold: 1,});
+   const [ref4, inView4] = useInView({ threshold: 1,});
 
 
   return (
@@ -160,6 +161,7 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
           </li>
          
       </ul>
+
     </section>
   );
 };
