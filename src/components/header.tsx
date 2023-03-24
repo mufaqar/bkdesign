@@ -7,7 +7,7 @@ import { FaBeer } from "react-icons/fa";
 
 
 function Header() {
-  const { setIsNavOpen } = useContext(SettingsContext)
+  const { setIsNavOpen,IsNavOpen } = useContext(SettingsContext)
   const [scrollTop, setScrollTop] = useState<any>(0);
   const [headerClr, setHeaderClr] = useState(false);
 
@@ -31,7 +31,7 @@ function Header() {
       <Head>
         <meta property="og:title" content="BK Design" key="title" />
       </Head>
-      <header className={`fixed w-full top-0 z-50 ${headerClr && 'bg-white shadow-sm'}`}>
+      <header className={` ${!IsNavOpen && 'fixed'} w-full top-0 z-50 ${headerClr && 'bg-white shadow-sm'}`}>
        <div className="container mx-auto flex justify-between items-center px-4 py-4 z-10 ">
        <Image src="/svg/logo.svg" alt="logo" width={150} height={50} className="z-[1]"/>
         <div className="flex items-center gap-4 cursor-pointer z-[1]" onClick={() => setIsNavOpen(true)}>
@@ -59,6 +59,8 @@ const Nav = () => {
   const { IsNavOpen, setIsNavOpen } = useContext(SettingsContext)
 
   return (
+   <>
+    <div className={` ${IsNavOpen ? 'fixed top-0 right-0 left-0 bottom-0 bg-black/40' : ''}`}/>
     <nav className={`bg-[url('/images/nav-bg.png')] fixed bottom-0 z-50 w-full lg:w-[400px] top-0 transition-all ease-in-out duration-400 p-10 bg-cover bg-left-bottom bg-no-repeat ${IsNavOpen ? 'right-0' : '-right-[100%]'}`}>
       <div className="flex justify-end" >
         <div className="flex items-center gap-4 text-white cursor-pointer" onClick={() => { setIsNavOpen(false) }}>
@@ -93,7 +95,8 @@ const Nav = () => {
           Kontaktiere uns
         </Link>
       </div>
-    </nav>
+      </nav>
+      </>
   );
 };
 
