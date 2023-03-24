@@ -31,7 +31,7 @@ function Header() {
       <Head>
         <meta property="og:title" content="BK Design" key="title" />
       </Head>
-      <header className={` ${!IsNavOpen && 'fixed'} w-full top-0 z-50 ${headerClr && 'bg-white shadow-sm'}`}>
+      <header className={` ${!IsNavOpen ? 'fixed' : 'absolute'}  w-full top-0 z-50 ${headerClr && 'bg-white shadow-sm'}`}>
        <div className="container mx-auto flex justify-between items-center px-4 py-4 z-10 ">
        <Image src="/svg/logo.svg" alt="logo" width={150} height={50} className="z-[1]"/>
         <div className="flex items-center gap-4 cursor-pointer z-[1]" onClick={() => setIsNavOpen(true)}>

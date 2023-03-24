@@ -261,3 +261,8 @@ select {
 ._hidden{
      display: none !important;
 }
+
+.main-gradient-bg{
+     background: rgb(109,213,213);
+     background: linear-gradient(160deg, rgba(109,213,213,0.33374912464985995) 0%, rgba(229,231,235,0) 52%);  
+}
