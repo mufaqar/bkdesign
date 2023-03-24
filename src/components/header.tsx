@@ -60,7 +60,7 @@ const Nav = () => {
 
   return (
    <>
-    <div className={` ${IsNavOpen ? 'fixed top-0 right-0 left-0 bottom-0 bg-black/40' : ''}`}/>
+    <div className={` ${IsNavOpen ? 'fixed top-0 z-10 right-0 left-0 bottom-0 bg-black/30' : ''}`}/>
     <nav className={`bg-[url('/images/nav-bg.png')] fixed bottom-0 z-50 w-full lg:w-[400px] top-0 transition-all ease-in-out duration-400 p-10 bg-cover bg-left-bottom bg-no-repeat ${IsNavOpen ? 'right-0' : '-right-[100%]'}`}>
       <div className="flex justify-end" >
         <div className="flex items-center gap-4 text-white cursor-pointer" onClick={() => { setIsNavOpen(false) }}>
