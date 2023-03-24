@@ -8,7 +8,7 @@ function Banner() {
     return (
         <main className='main-gradient-bg'>
             <section id="home" className='relative h-screen flex justify-center items-center flex-col bg-[url(/images/main-mobile-bg.png)] md:bg-[url(/images/main-mg-bg.png)] lg:container lg:mx-auto lg:bg-none bg-right bg-cover bg-no-repeat py-20 px-4 -mt-[77px]'>
-            <div className='flex lg:flex-row flex-col-reverse gap-10 mt-20 lg:mt-32  container mx-auto'>
+            <div className='flex lg:flex-row flex-col-reverse gap-10 mt-20 lg:mt-32 items-center container mx-auto'>
                 <div className='lg:w-1/2 w-full z-[1]'>
                     <h1 className='xl:text-[88px] lg:text-[66px] lg:leading-[77px] xl:leading-[92px] text-[44px] leading-[46px] lg:text-left text-center font-bold mb-4 xl:mb-10'>
                         Machen Sie Ihr Unternehmen sichtbar
