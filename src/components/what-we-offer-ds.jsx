@@ -24,7 +24,7 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
           <img
             src="/images/bg-2.png"
             alt="video"
-            className={` absolute hidden lg:block top-20 right-0  -z-[21]
+            className={` absolute hidden lg:block w-[380px] top-40 right-0 -z-[21]
              
             `}
           />
