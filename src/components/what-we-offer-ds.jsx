@@ -13,9 +13,9 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
         <li className="card  " id={`card1`} ref={ref1}>
           <div
             id="offer"
-            className={` container flex md:mt-[-180px] mb-4 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
+            className={` container flex md:mt-[-220px] mb-10 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
           >
-            <h1 className="subheading ">Unser Angebot</h1>
+            <h1 className="subheading pt-4">Unser Angebot</h1>
             <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
               Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
               individuellen Marketing-Bedürfnisse zu erfüllen.
@@ -24,7 +24,7 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
           <img
             src="/images/bg-2.png"
             alt="video"
-            className={` absolute hidden lg:block right-0  -z-[21]
+            className={` absolute hidden lg:block top-20 right-0  -z-[21]
              
             `}
           />

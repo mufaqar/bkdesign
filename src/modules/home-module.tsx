@@ -48,8 +48,17 @@ function Home_Module() {
     <>
       <Banner />
 
-      <section className={`   md:sticky md:top-[75px] ${projectpostion >= 600 ? 'block' : projectpostion === 'null' ? 'block' : '_hidden'}`}>
-
+      <section className={`   md:sticky md:top-[75px] `}>
+        <div
+            id="offer"
+            className={` container flex md:hidden md:mt-[-220px] mb-10 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
+          >
+            <h1 className="subheading pt-4">Unser Angebot</h1>
+            <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
+              Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
+              individuellen Marketing-Bedürfnisse zu erfüllen.
+            </p>
+          </div>
 
         <div
 
@@ -60,23 +69,11 @@ function Home_Module() {
           })}
 
         </div>
-        {/* <img
-          src="/images/bg-2.png"
-          alt="video"
-          className={` hidden lg:block right-0  -z-[21]
-             ${projectpostion <= 2600 && projectpostion >= 200 ? "fixed top-[24rem]" : "absolute top-[8rem]"}
-            `}
-        /> */}
-
-
-
       </section>
-      <section className="relative mt-60 ">
+
+      <section className="relative md:mt-40 lg:mt-80 ">
         <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData} />
       </section>
-
-
-
 
 
       <section className="bg-white" ref={myDivRef}>
@@ -85,7 +82,7 @@ function Home_Module() {
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
         >
           <h1 className="subheading">Projekte</h1>
-          <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-12 text-gray-600">
+          <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-20 text-gray-600">
             Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
             unseren Projekten inspirieren.
           </p>
