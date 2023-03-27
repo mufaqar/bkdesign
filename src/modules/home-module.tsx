@@ -96,11 +96,7 @@ function Home_Module() {
           {projectData.map((item, idx) => {
             return <Projects id={idx} key={idx} item={item} />;
           })}
-          <img
-            src="/images/bg-3.png"
-            alt="video"
-            className={`absolute hidden _pimg lg:block lg:w-[50%] 2xl:w-auto left-0 lg:top-0 sm:-top-60 `}
-          />
+          
         </div>
       </section>
 
