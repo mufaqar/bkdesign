@@ -39,9 +39,9 @@ console.log("🚀 ~ file: projects.tsx:6 ~ Projects ~ item:", item)
           </div> */}
         </div>
 
-        <div className="flex  justify-center bg-white items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
-          <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
-            <div className="flex gap-3">
+        <div className="flex bg-white justify-center  items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
+          <div className="flex  justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
+            <div className="flex  gap-3">
             <Link
               href="#"
               className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"

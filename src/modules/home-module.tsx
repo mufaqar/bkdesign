@@ -76,7 +76,7 @@ function Home_Module() {
       </section>
 
 
-      <section className="bg-white" ref={myDivRef}>
+      <section className="" ref={myDivRef}>
         <div
           id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
@@ -91,7 +91,7 @@ function Home_Module() {
       <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <ProjectCrousel projectData={projectData} />
       </div>
-      <section className="bg-white">
+      <section className="">
         <div className="hidden relative md:block">
           {projectData.map((item, idx) => {
             return <Projects id={idx} key={idx} item={item} />;
