@@ -117,11 +117,15 @@ select {
   scale: 0.96;
 }
 
-.pro0,
+.pro0 {
+  position: sticky;
+  top: 1rem;
+}
+
 .pro1,
 .pro2 {
   position: sticky;
-  top: 6rem;
+  top: 17rem;
 }
 
 @keyframes move-wave {

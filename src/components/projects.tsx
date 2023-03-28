@@ -27,54 +27,65 @@ const Projects = ({ id, item }: any) => {
       ref={myDivRef}
       className={`relative px-4  z-20 pro${id}`}
     >
+      {id === 0 && <div
+        id="project"
+        className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
+      >
+        <h1 className="subheading">Projekte</h1>
+        <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-5 text-gray-600">
+          Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
+          unseren Projekten inspirieren.
+        </p>
+      </div>}
+
       <div className="grid grid-cols-1 md:grid-cols-2">
-      <div className="flex justify-center items-center flex-col lg:p-10">
-        <Image
-          src={item?.image}
-          alt="video"
-          width={650}
-          height={300}
-          className="rounded-[32px]"
-        />
-        {/* <div className="item bg-[url('/images/projects.png')] bg-cover bg-no-repeat bg-bottom before:bg-[url('/images/projects.png')]">
+        <div className="flex justify-center items-center flex-col lg:p-10">
+          <Image
+            src={item?.image}
+            alt="video"
+            width={650}
+            height={300}
+            className="rounded-[32px]"
+          />
+          {/* <div className="item bg-[url('/images/projects.png')] bg-cover bg-no-repeat bg-bottom before:bg-[url('/images/projects.png')]">
             <div className="content "></div>
           </div> */}
-      </div>
+        </div>
 
-      <div className="flex bg-white justify-center  items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
-        <div className="flex  justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
-          <div className="flex  gap-3">
-            <Link
-              href="#"
-              className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
-            >
-              {item?.tag}
-            </Link>
-            {item?.tag1 && (
+        <div className="flex bg-white justify-center  items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
+          <div className="flex  justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
+            <div className="flex  gap-3">
               <Link
                 href="#"
                 className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
               >
-                {item?.tag1}
+                {item?.tag}
               </Link>
-            )}
+              {item?.tag1 && (
+                <Link
+                  href="#"
+                  className=" text-main bg-[#EAF9F9] px-6 py-3 rounded-full"
+                >
+                  {item?.tag1}
+                </Link>
+              )}
+            </div>
+            <h5 className="text-xl md:text-[32px] font-bold text-black mb-4 max-w-sm md:leading-9 text-center  sm:text-left mt-5">
+              {item?.title}
+            </h5>
+            <p className=" text-sm text-gray-800 max-w-xs mt-1 text-center sm:text-left">
+              {item?.description}
+            </p>
           </div>
-          <h5 className="text-xl md:text-[32px] font-bold text-black mb-4 max-w-sm md:leading-9 text-center  sm:text-left mt-5">
-            {item?.title}
-          </h5>
-          <p className=" text-sm text-gray-800 max-w-xs mt-1 text-center sm:text-left">
-            {item?.description}
-          </p>
+          <div className="flex justify-center sm:justify-end items-center md:justify-start w-full">
+            <Link
+              href={item?.viewProjectLink}
+              className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
+            >
+              Videoproduktion
+            </Link>
+          </div>
         </div>
-        <div className="flex justify-center sm:justify-end items-center md:justify-start w-full">
-          <Link
-            href={item?.viewProjectLink}
-            className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
-          >
-            Videoproduktion
-          </Link>
-        </div>
-      </div>
       </div>
 
       <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">

@@ -50,15 +50,15 @@ function Home_Module() {
 
       <section className={`   md:sticky md:top-[75px] `}>
         <div
-            id="offer"
-            className={` container flex md:hidden md:mt-[-220px] mb-10 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
-          >
-            <h1 className="subheading pt-4">Unser Angebot</h1>
-            <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
-              Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
-              individuellen Marketing-Bedürfnisse zu erfüllen.
-            </p>
-          </div>
+          id="offer"
+          className={` container flex md:hidden md:mt-[-220px] mb-10 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
+        >
+          <h1 className="subheading pt-4">Unser Angebot</h1>
+          <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal text-gray-600">
+            Wir bieten Ihnen maßgeschneiderte Dienstleistungen, um Ihre
+            individuellen Marketing-Bedürfnisse zu erfüllen.
+          </p>
+        </div>
 
         <div
 
@@ -77,6 +77,9 @@ function Home_Module() {
 
 
       <section className="" ref={myDivRef}>
+
+      </section>
+      <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <div
           id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
@@ -87,8 +90,6 @@ function Home_Module() {
             unseren Projekten inspirieren.
           </p>
         </div>
-      </section>
-      <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <ProjectCrousel projectData={projectData} />
       </div>
       <section className="">
@@ -96,7 +97,7 @@ function Home_Module() {
           {projectData.map((item, idx) => {
             return <Projects id={idx} key={idx} item={item} />;
           })}
-          
+
         </div>
       </section>
 
