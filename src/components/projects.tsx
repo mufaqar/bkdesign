@@ -38,13 +38,13 @@ const Projects = ({ id, item }: any) => {
         </p>
       </div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex justify-center items-center flex-col lg:p-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 pb-40">
+        <div className="flex justify-end items-end flex-col lg:p-10 ">
           <Image
             src={item?.image}
             alt="video"
             width={500}
-            height={270}
+            height={260}
             className="rounded-[32px]"
           />
           {/* <div className="item bg-[url('/images/projects.png')] bg-cover bg-no-repeat bg-bottom before:bg-[url('/images/projects.png')]">
