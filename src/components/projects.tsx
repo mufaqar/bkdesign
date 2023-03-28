@@ -43,8 +43,8 @@ const Projects = ({ id, item }: any) => {
           <Image
             src={item?.image}
             alt="video"
-            width={600}
-            height={280}
+            width={500}
+            height={270}
             className="rounded-[32px]"
           />
           {/* <div className="item bg-[url('/images/projects.png')] bg-cover bg-no-repeat bg-bottom before:bg-[url('/images/projects.png')]">
