@@ -38,7 +38,7 @@ const Projects = ({ id, item }: any) => {
         </p>
       </div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 pb-40">
+      <div className={`grid grid-cols-1 md:grid-cols-2 container mx-auto pb-40}`}>
         <div className="flex justify-end items-end flex-col lg:p-10 ">
           <Image
             src={item?.image}
@@ -52,7 +52,7 @@ const Projects = ({ id, item }: any) => {
           </div> */}
         </div>
 
-        <div className="flex bg-white justify-center  items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
+        <div className="flex bg-white justify-center relative items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10">
           <div className="flex  justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
             <div className="flex  gap-3">
               <Link
@@ -85,19 +85,20 @@ const Projects = ({ id, item }: any) => {
               Videoproduktion
             </Link>
           </div>
+          <ul className="gap-2 hidden lg:flex top-1/2 right-40 absolute flex-col transform -translate-y-1/2 px-4 z-50">
+            {[1, 2, 3].map((dots, idx) => {
+              return (
+                <li
+                  key={idx}
+                  className={`bg-main p-1 rounded-full ${id === idx && "py-2"}`}
+                ></li>
+              );
+            })}
+          </ul>
         </div>
       </div>
 
-      <ul className="gap-2 hidden lg:flex top-1/2 right-10 absolute flex-col transform -translate-y-1/2 px-4 z-50">
-        {[1, 2, 3].map((dots, idx) => {
-          return (
-            <li
-              key={idx}
-              className={`bg-main p-1 rounded-full ${id === idx && "py-2"}`}
-            ></li>
-          );
-        })}
-      </ul>
+      
 
       {id === 0 && (
         <img
