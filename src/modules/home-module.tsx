@@ -17,9 +17,12 @@ import WhatsWeOfferDesktop from "../components/what-we-offer-ds";
 function Home_Module() {
   const { openModel, setProjectPostion, projectpostion } =
     useContext(SettingsContext);
-  console.log("🚀 ~ file: home-module.tsx:19 ~ Home_Module ~ projectpostion:", projectpostion)
+  console.log(
+    "🚀 ~ file: home-module.tsx:19 ~ Home_Module ~ projectpostion:",
+    projectpostion
+  );
 
-  const [p, setP] = useState<number>()
+  const [p, setP] = useState<number>();
 
   const myDivRef = useRef<any>(null);
   // const [ref, inView] = useInView({ threshold: 0.5,});
@@ -39,10 +42,8 @@ function Home_Module() {
   }, []);
 
   useEffect(() => {
-    setP(940 - projectpostion)
-  }, [projectpostion, p])
-
-
+    setP(940 - projectpostion);
+  }, [projectpostion, p]);
 
   return (
     <>
@@ -60,14 +61,10 @@ function Home_Module() {
           </p>
         </div>
 
-        <div
-
-          className="relative bg-red md:hidden justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip "
-        >
+        <div className="relative bg-red md:hidden justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip ">
           {WhatWeOfferData.map((item, idx) => {
             return <WhatWeOffer id={idx} key={idx} item={item} />;
           })}
-
         </div>
       </section>
 
@@ -75,10 +72,7 @@ function Home_Module() {
         <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData} />
       </section>
 
-
-      <section className="" ref={myDivRef}>
-
-      </section>
+      <section className="" ref={myDivRef}></section>
       <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <div
           id="project"
@@ -92,12 +86,13 @@ function Home_Module() {
         </div>
         <ProjectCrousel projectData={projectData} />
       </div>
+
+      
       <section className="">
         <div className="hidden relative md:block">
           {projectData.map((item, idx) => {
             return <Projects id={idx} key={idx} item={item} />;
           })}
-
         </div>
       </section>
 
