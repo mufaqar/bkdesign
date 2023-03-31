@@ -99,7 +99,7 @@ const Projects = ({ id, item }: any) => {
         Videoproduktion
       </Link>
     </div>
-    <ul className={`gap-2 hidden lg:flex top-1/2 right-0 absolute flex-col transform -translate-y-1/2 px-4 z-0 ${id===2 && '-right-16'}`}>
+    <ul className={`gap-2 hidden lg:flex top-1/2 right-0 absolute flex-col transform -translate-y-1/2 px-4 z-0 ${id===2 && '-right-20'}`}>
       {[1, 2, 3].map((dots, idx) => {
         return (
           <li
