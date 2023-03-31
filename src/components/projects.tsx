@@ -39,7 +39,7 @@ const Projects = ({ id, item }: any) => {
         </div>
       </div>}
 
-      <div className={`grid grid-cols-1 md:grid-cols-2 container mx-auto pb-40}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 container mx-auto _padding pb-40}`}>
         <div className="flex justify-end items-end flex-col lg:p-10 ">
           <Image
             src={item?.image}
@@ -66,7 +66,7 @@ const Projects = ({ id, item }: any) => {
         />
       )}
     </section>
-    <div className={`flex max-w-[650px] bg-white pl-[50%] absolute ml-[50%] m-0 justify-center ${id === 0 && 'top-[320px] xl:top-[370px]' } ${id === 2 && 'bottom-[80px] xl:bottom-[110px]' } ${id === 1 && 'top-[850px] xl:top-[950px]' } items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10`}>
+    <div className={`flex max-w-[650px] bg-white pl-[50%] absolute ml-[50%] m-0 justify-center ${id === 0 && 'top-[320px] xl:top-[370px]' } ${id === 2 && 'bottom-[180px] xl:bottom-[210px]' } ${id === 1 && 'top-[950px] xl:top-[1050px]' } items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-10 md:p-10`}>
     <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
       <div className="flex  gap-3">
         <Link
