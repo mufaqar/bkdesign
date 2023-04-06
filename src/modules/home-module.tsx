@@ -13,15 +13,13 @@ import { useInView } from "react-hook-inview";
 import { SettingsContext } from "@/context/settingContext";
 import Image from "next/image";
 import WhatsWeOfferDesktop from "../components/what-we-offer-ds";
+import Slider from "react-slick";
+import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 
 function Home_Module() {
   const { openModel, setProjectPostion, projectpostion } =
-    useContext(SettingsContext);
-  console.log(
-    "🚀 ~ file: home-module.tsx:19 ~ Home_Module ~ projectpostion:",
-    projectpostion
-  );
-
+  useContext(SettingsContext);
+  
   const [p, setP] = useState<number>();
 
   const myDivRef = useRef<any>(null);
@@ -45,11 +43,31 @@ function Home_Module() {
     setP(940 - projectpostion);
   }, [projectpostion, p]);
 
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows:false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0
+  }
+  const sliderRef = useRef<any>(null);
+
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
   return (
     <>
       <Banner />
 
-      <section className={`   md:sticky md:top-[75px] `}>
+      <section className={`md:sticky md:top-[75px] `}>
         <div
           id="offer"
           className={` container flex md:hidden md:mt-[-220px] mb-10 px-4 justify-center items-center flex-col max-w-[650px] w-full mx-auto  `}
@@ -87,13 +105,34 @@ function Home_Module() {
         <ProjectCrousel projectData={projectData} />
       </div>
 
-      
-      <section className="">
-        <div className="hidden relative md:block">
+      <section className="relative">
+        <div
+          id="project"
+          className="flex justify-center bg-white px-4 items-center pt-6 sm:pt-16 flex-col w-full "
+        >
+          <div className="max-w-[600px] mx-auto text-center mb-12">
+            <h1 className="subheading">Projekte</h1>
+            <p className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] text-center font-normal mb-5 text-gray-600">
+              Entdecken Sie unsere bisherigen Arbeiten und lassen Sie sich von
+              unseren Projekten inspirieren.
+            </p>
+          </div>
+        </div>
+        <div className="hidden container mx-auto relative md:block projects">
+        <Slider ref={sliderRef} {...settings}>
           {projectData.map((item, idx) => {
             return <Projects id={idx} key={idx} item={item} />;
           })}
+          </Slider>
+
+          <button className="text-main absolute top-1/2 transform -translate-y-1/2 left-7 shadow-md font-bold p-3 md:-left-12 lg:left-7 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
+          <button className="text-main absolute top-1/2 transform -translate-y-1/2 right-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
         </div>
+        <img
+          src="/images/bg-3.png"
+          alt="video"
+          className={`absolute hidden _pimg z-[-1] lg:block lg:w-[50%] 2xl:w-auto left-0 -bottom-40`}
+        />
       </section>
 
       <Partner />
