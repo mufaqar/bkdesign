@@ -108,7 +108,7 @@ function Home_Module() {
       <section className="relative">
         <div
           id="project"
-          className="flex justify-center bg-white px-4 items-center pt-6 sm:pt-16 flex-col w-full "
+          className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col w-full "
         >
           <div className="max-w-[600px] mx-auto text-center mb-12">
             <h1 className="subheading">Projekte</h1>
