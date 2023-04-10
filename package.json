@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/vision": "^3.0.0",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",

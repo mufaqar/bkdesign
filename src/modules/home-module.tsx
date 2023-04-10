@@ -16,10 +16,11 @@ import WhatsWeOfferDesktop from "../components/what-we-offer-ds";
 import Slider from "react-slick";
 import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
 
-function Home_Module() {
+function Home_Module({data}:any) {
+  console.log("🚀 ~ file: home-module.tsx:20 ~ Home_Module ~ data:", data)
   const { openModel, setProjectPostion, projectpostion } =
   useContext(SettingsContext);
-  
+  const {partners, projects, uberUns,  userAngebot } = data
   const [p, setP] = useState<number>();
 
   const myDivRef = useRef<any>(null);
@@ -80,14 +81,14 @@ function Home_Module() {
         </div>
 
         <div className="relative bg-red md:hidden justify-start items-start flex flex-row md:flex-col whatweoffer overflow-hidden md:overflow-clip ">
-          {WhatWeOfferData.map((item, idx) => {
+          {userAngebot.map((item:any, idx:number) => {
             return <WhatWeOffer id={idx} key={idx} item={item} />;
           })}
         </div>
       </section>
 
       <section className="relative md:mt-40 lg:mt-80 ">
-        <WhatsWeOfferDesktop WhatWeOfferData={WhatWeOfferData} />
+        <WhatsWeOfferDesktop WhatWeOfferData={userAngebot} />
       </section>
 
       <section className="" ref={myDivRef}></section>
@@ -102,10 +103,10 @@ function Home_Module() {
             unseren Projekten inspirieren.
           </p>
         </div>
-        <ProjectCrousel projectData={projectData} />
+        <ProjectCrousel projectData={projects} />
       </div>
 
-      <section className="relative">
+      <section className="relative hidden md:block">
         <div
           id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col w-full "
@@ -120,7 +121,7 @@ function Home_Module() {
         </div>
         <div className="hidden container mx-auto relative md:block projects">
         <Slider ref={sliderRef} {...settings}>
-          {projectData.map((item, idx) => {
+          {projects.map((item:any, idx:number) => {
             return <Projects id={idx} key={idx} item={item} />;
           })}
           </Slider>
@@ -135,7 +136,7 @@ function Home_Module() {
         />
       </section>
 
-      <Partner />
+      <Partner partners={partners}/>
 
       <About />
 

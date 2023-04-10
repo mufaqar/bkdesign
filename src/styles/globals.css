@@ -65,7 +65,9 @@ html {
     padding-left: 2rem;
   }
 }
-
+._content p{
+  margin-top:1rem
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;

@@ -9,9 +9,15 @@ export default {
       type: "string",
     },
     {
-      title: "Content",
-      name: "content",
-      type: "string",
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block'
+        },
+        
+      ]
     },
     {
       title: "Image",

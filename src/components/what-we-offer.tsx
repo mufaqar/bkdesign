@@ -2,9 +2,10 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-hook-inview";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+const BlockContent = require('@sanity/block-content-to-react')
 
 const WhatweOffer = ({ id, item }: any) => {
-  
+
   const [ref, inView] = useInView({
     threshold: 0.7,
   });
@@ -47,7 +48,6 @@ const WhatweOffer = ({ id, item }: any) => {
   const changeMobileSlidePrevious = (id: number) => {
     const wwoN = document.querySelector(`.wwo${id}`);
     wwoN?.classList.remove("onMobileTranslate");
-    
   };
   const changeMobileSlideNext = (id: number) => {
     const wwoN = document.querySelector(`.wwo${id + 1}`);
@@ -56,8 +56,6 @@ const WhatweOffer = ({ id, item }: any) => {
 
   return (
     <>
-      
-
       <section
         ref={ref}
         className={`relative z-[22] p-4 pt-6 h-[590px] md:h-auto min-w-full flex flex-col transition duration-1000 ease-in-out justify-start items-start wwo${id}`}
@@ -65,7 +63,7 @@ const WhatweOffer = ({ id, item }: any) => {
         <div className="relative bg-[url('/images/what-we-offer-bg.png')] w-full md:container md:mx-auto rounded-[32px] bg-left-bottom bg-no-repeat bg-cover grid md:h-[506px] grid-cols-1 md:grid-cols-2">
           <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
             <div className="text-white flex justify-between py-3 w-full gap-2 md:hidden">
-              <Image src={item?.logo} alt="video" width={80} height={80} />
+              <Image src={item?.image?.asset?.url} alt="video" width={80} height={80} />
               <div className="flex items-center gap-2">
                 <button
                   className="text-main  font-bold p-2 bg-white rounded-full"
@@ -84,17 +82,18 @@ const WhatweOffer = ({ id, item }: any) => {
             <h5 className="text-2xl md:text-[32px] font-bold text-white mb-4">
               {item.title}
             </h5>
-            <p className=" text-sm text-gray-300">{item?.detail1}</p>
-            <p className=" text-sm text-gray-300 mt-4">{item?.detail2}</p>
-            <p className=" text-sm text-gray-300 mt-4">{item?.detail3}</p>
+            <div
+              className=" text-sm text-gray-300"
+              
+            >
+              <BlockContent blocks={item?.content} />
+
+            </div>
           </div>
           <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
             <Image src={item?.logo} alt="video" width={350} height={300} />
           </div>
-         
-         
-         
-         
+
           <ul className="gap-2 flex md:bottom-1/2 md:bg-transparent bg-white  right-1/2 md:right-4 -bottom-6 lg:right-10 absolute md:flex-col translate-x-1/2 transform md:translate-y-1/2 px-4 z-50">
             {[1, 2, 3, 4].map((dots, idx) => {
               return (
@@ -110,49 +109,50 @@ const WhatweOffer = ({ id, item }: any) => {
           </ul>
         </div>
 
-
-        {
-          id === 1 && <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-4 -z-[1]"><AfterEffect/><AfterEffect/></div>
-        }
-        {
-          id === 2 && <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-2 -z-[1]"><AfterEffect2/></div>
-        } 
-        {
-          id === 3 && <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-0 -z-[1]"><AfterEffect3/></div>
-        } 
-
+        {id === 1 && (
+          <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-4 -z-[1]">
+            <AfterEffect />
+            <AfterEffect />
+          </div>
+        )}
+        {id === 2 && (
+          <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-2 -z-[1]">
+            <AfterEffect2 />
+          </div>
+        )}
+        {id === 3 && (
+          <div className="block md:hidden absolute w-[calc(100%-3rem)] ml-2 top-0 -z-[1]">
+            <AfterEffect3 />
+          </div>
+        )}
       </section>
-      
-      
     </>
   );
 };
 
 export default WhatweOffer;
 
-
-
 const AfterEffect = () => {
-    return(
-      <div className=" p-6 bg-[#CDD5D5] rounded-tr-[32px] rounded-tl-[32px]"></div>
-    )
-}
+  return (
+    <div className=" p-6 bg-[#CDD5D5] rounded-tr-[32px] rounded-tl-[32px]"></div>
+  );
+};
 
 const AfterEffect2 = () => {
-  return(
+  return (
     <>
       <div className=" p-6 bg-[#CDD5D5] rounded-tr-[32px] mx-4 rounded-tl-[32px]"></div>
       <div className=" p-6 bg-[#9BABAB] rounded-tr-[32px] -mt-10 rounded-tl-[32px] "></div>
     </>
-  )
-}
+  );
+};
 
 const AfterEffect3 = () => {
-  return(
+  return (
     <>
       <div className=" p-6 bg-[#CDD5D5] rounded-tr-[32px] mx-4 rounded-tl-[32px]"></div>
       <div className=" p-6 bg-[#9BABAB] rounded-tr-[32px] mx-2 -mt-10 rounded-tl-[32px] "></div>
       <div className=" p-6 bg-[#698282] rounded-tr-[32px] -mt-10 rounded-tl-[32px] "></div>
     </>
-  )
-}
+  );
+};

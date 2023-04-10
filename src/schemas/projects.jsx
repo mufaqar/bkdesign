@@ -11,11 +11,11 @@ export default {
     {
       title: "Content",
       name: "content",
-      type: "string",
+      type: "text",
     },
     {
-      title: "Icon",
-      name: "icon",
+      title: "Image",
+      name: "image",
       type: "image",
       options: {
         hotspot: true, // <-- Defaults to false

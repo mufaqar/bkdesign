@@ -1,7 +1,9 @@
 import { useInView } from 'react-hook-inview';
 import Image from 'next/image';
+const BlockContent = require('@sanity/block-content-to-react')
 
-const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
+const WhatsWeOfferDesktop = ({WhatWeOfferData}) => {
+  console.log("🚀 ~ file: what-we-offer-ds.jsx:5 ~ WhatsWeOfferDesktop ~ WhatWeOfferData:", WhatWeOfferData[0])
   const [ref1, inView1] = useInView({ threshold: 1 });
   const [ref2, inView2] = useInView({ threshold: 1 });
   const [ref3, inView3] = useInView({ threshold: 1 });
@@ -36,25 +38,17 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
             >
               <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
                 <h5 className="text-2xl md:text-[32px] font-bold text-white mb-4">
-                  Videoproduktion
+                  {WhatWeOfferData[0].title}
                 </h5>
-                <p className=" text-sm text-gray-300">
-                  Ein Bild sagt mehr als tausend Worte - ein Video noch viel
-                  mehr! Mit unserer Videoproduktion setzen wir Ihr Unternehmen
-                  perfekt in Szene.{' '}
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Wir arbeiten mit modernster Ausrüstung und einem erfahrenen
-                  Team. Dabei setzen wir auf kreative Konzepte, eine
-                  professionelle Umsetzung und ein Auge fürs Detail, um
-                  sicherzustellen, dass Ihre Botschaft genau auf den Punkt
-                  gebracht wird.
-                </p>
+            
+                <div className=" text-sm text-gray-300 _content">
+                 <BlockContent blocks={WhatWeOfferData[0]?.content} />
+                </div>
               </div>
               <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
                 <Image
-                  src="/svg/Video.svg"
-                  alt="video"
+                  src={WhatWeOfferData[0]?.image?.asset.url}
+                  alt={WhatWeOfferData[0].image?.alt}
                   width={350}
                   height={300}
                 />
@@ -66,7 +60,6 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
                       key={id}
                       className={`bg-[#457575] p-1 rounded-full  [&:nth-child(1)]:md:py-2 px-2 md:px-1 md:bg-white bg-[#042c2cc0] `}
                     >
-                      {' '}
                     </li>
                   );
                 })}
@@ -84,26 +77,16 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
             >
               <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
                 <h5 className="text-2xl md:text-[32px] font-bold text-white mb-4">
-                  Branding
+                {WhatWeOfferData[1].title}
                 </h5>
-                <p className=" text-sm text-gray-300">
-                  Unser Branding gibt Ihrem Unternehmen ein unverwechselbares
-                  Gesicht. Wir entwerfen Logos, Visitenkarten, Briefpapier und
-                  andere Materialien, die perfekt zu Ihrem Unternehmen passen.{' '}
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass
-                  wir Ihre Vision und Werte vollständig verstehen und in das
-                  Design integrieren
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Sie Ihrem Unternehmen mit unserem Branding das gewisse Etwas!
-                </p>
+                <div className=" text-sm text-gray-300 _content">
+                <BlockContent blocks={WhatWeOfferData[1]?.content} />
+               </div>
               </div>
               <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
                 <Image
-                  src="/svg/Show.svg"
-                  alt="video"
+                src={WhatWeOfferData[1]?.image?.asset.url}
+                alt={WhatWeOfferData[1].image?.alt}
                   width={350}
                   height={300}
                 />
@@ -133,27 +116,16 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
             >
               <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
                 <h5 className="text-2xl md:text-[32px] font-bold text-white mb-4">
-                  Webdesign
+                {WhatWeOfferData[2].title}
                 </h5>
-                <p className=" text-sm text-gray-300">
-                  Unser Webdesign zielt darauf ab, ein beeindruckendes
-                  Online-Erlebnis für Ihre Zielgruppe zu erschaffen. Wir
-                  verwenden modernste Technologie, um eine attraktive
-                  Benutzeroberfläche zu erstellen, die den Bedürfnissen Ihrer
-                  Kunden entspricht.{' '}
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass
-                  das Design Ihrer Website Ihre Marke widerspiegelt.
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Gemeinsam gestalten wir eine Webseite, die zu Ihnen passt.
-                </p>
+                <div className=" text-sm text-gray-300 _content">
+                <BlockContent blocks={WhatWeOfferData[2]?.content} />
+               </div>
               </div>
               <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
                 <Image
-                  src="/svg/Activity.svg"
-                  alt="video"
+                src={WhatWeOfferData[2]?.image?.asset.url}
+                alt={WhatWeOfferData[2].image?.alt}
                   width={350}
                   height={300}
                 />
@@ -181,29 +153,16 @@ const WhatsWeOfferDesktop = ({ WhatWeOfferData }) => {
             >
               <div className="flex justify-center items-start max-w-2xl flex-col p-6 md:p-10 lg:p-32">
                 <h5 className="text-2xl md:text-[32px] font-bold text-white mb-4">
-                  Webentwicklung
+                {WhatWeOfferData[3]?.title}
                 </h5>
-                <p className=" text-sm text-gray-300">
-                  Unsere Webentwicklung bietet eine optimale Umsetzung und
-                  Programmierung des Webdesigns. Wir verwenden die neuesten
-                  Technologien und Standards, um sicherzustellen, dass Ihre
-                  Website auf jedem Gerät und in jedem Browser perfekt
-                  funktioniert. Darüber hinaus sorgen wir mit einem
-                  SSL-Zertifikat für maximale Sicherheit Ihrer Website und
-                  schützen die Daten Ihrer Kunden.{' '}
-                </p>
-                <p className=" text-sm text-gray-300 mt-4">
-                  Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass
-                  Ihre Bedürfnisse und Anforderungen in jeder Phase des
-                  Entwicklungsprozesses berücksichtigt werden. Sie können sich
-                  sicher sein, dass Ihre Website nicht nur schön aussieht,
-                  sondern auch reibungslos funktioniert.
-                </p>
+                <div className=" text-sm text-gray-300 _content">
+                <BlockContent blocks={WhatWeOfferData[3]?.content} />
+               </div>
               </div>
               <div className="md:flex hidden justify-center items-center flex-col p-5 md:p-10 px-28 pt-0 md:px-10">
                 <Image
-                  src="/svg/Setting.svg"
-                  alt="video"
+                src={WhatWeOfferData[3]?.image?.asset.url}
+                alt={WhatWeOfferData[3].image?.alt}
                   width={350}
                   height={300}
                 />
