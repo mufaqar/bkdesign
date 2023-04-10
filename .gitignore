@@ -12,6 +12,7 @@
 /.next/
 /out/
 .sanity
+dist
 # production
 /build
 
