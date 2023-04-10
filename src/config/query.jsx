@@ -5,7 +5,7 @@ export const partnersQuery = `*[_type == "partners"] | order(_createdAt asc) {
           },
           alt
      }
-}`
+}`;
 
 export const projectsQuery = `*[_type == "projects"] | order(_createdAt asc) {
      title,
@@ -22,13 +22,17 @@ export const projectsQuery = `*[_type == "projects"] | order(_createdAt asc) {
           title,
           link
      }
-}`
+}`;
 
 export const uberUnsQuery = `*[_type == "uber_uns"] | order(_createdAt asc) {
      title,
      content,
      social[]{
-          icon,   
+          icon{
+               asset->{
+                    url
+               }
+          },   
           link
      },
      image{
@@ -36,10 +40,9 @@ export const uberUnsQuery = `*[_type == "uber_uns"] | order(_createdAt asc) {
                url
           },
           alt
-
      },
      tag
-}`
+}`;
 
 export const userAngebotQuery = `*[_type == "unserAngebot"] | order(_createdAt asc) {
      title,
@@ -51,4 +54,4 @@ export const userAngebotQuery = `*[_type == "unserAngebot"] | order(_createdAt a
           alt
 
      },
-}`
+}`;

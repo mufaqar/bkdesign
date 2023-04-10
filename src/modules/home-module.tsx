@@ -138,7 +138,7 @@ function Home_Module({data}:any) {
 
       <Partner partners={partners}/>
 
-      <About />
+      <About uberUns={uberUns}/>
 
       {openModel && (
         <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2">
