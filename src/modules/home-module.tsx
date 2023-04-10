@@ -126,8 +126,8 @@ function Home_Module({data}:any) {
           })}
           </Slider>
 
-          <button className="text-main absolute top-1/2 transform -translate-y-1/2 left-7 shadow-md font-bold p-3 md:-left-12 lg:left-7 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
-          <button className="text-main absolute top-1/2 transform -translate-y-1/2 right-7 shadow-md font-bold p-3 bg-white rounded-full" onClick={next}><BsChevronRight size={15} /></button>
+          <button className="text-main absolute top-1/2 transform -translate-y-1/2 left-7 shadow-md font-bold p-3 md:-left-12 xl:left-20 2xl:left-48 bg-white rounded-full" onClick={previous}><BsChevronLeft size={15}  /></button>
+          <button className="text-main absolute top-1/2 transform -translate-y-1/2 right-16 shadow-md font-bold p-3 bg-white 2xl:right-48 rounded-full" onClick={next}><BsChevronRight size={15} /></button>
         </div>
         <img
           src="/images/bg-3.png"
