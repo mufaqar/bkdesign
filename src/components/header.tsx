@@ -84,7 +84,7 @@ const Nav = () => {
       <ul className="mt-20 gap-10 flex lg:ml-16 items-center lg:items-start justify-center flex-col">
         {navItems.map((item, idx) => {
           return (
-            <li key={idx} className="text-white font-bold text-5xl hover:text-gray-400">
+            <li key={idx} className="text-white font-bold text-5xl hover:text-gray-400" onClick={()=>setIsNavOpen(false)}>
               <Link href={item.link}>{item.name}</Link>
             </li>
           );
@@ -107,7 +107,7 @@ export const navItems = [
   },
   {
     name: "Angebot",
-    link: "#offer",
+    link: "#angebot",
   },
   {
     name: "Projekte",

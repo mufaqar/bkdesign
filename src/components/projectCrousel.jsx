@@ -29,7 +29,7 @@ const ProjectCrousel = ({ projectData }) => {
   return (
     <div className="relative -mt-5 md:mt-0">
       <Slider ref={sliderRef} {...settings}>
-        {projectData.map((item, idx) => {
+        {projectData?.map((item, idx) => {
           return (
             <section
               key={idx}
@@ -72,7 +72,7 @@ const ProjectCrousel = ({ projectData }) => {
                     href={item?.video_production_url}
                     className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
                   >
-                    Videoproduktion
+                  ZUM PROJEKT
                   </Link>
                 </div>
               </div>

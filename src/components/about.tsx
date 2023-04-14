@@ -39,27 +39,34 @@ export default function About({ uberUns }: any) {
             className={`sm:p-14 p-6 rounded-[40px] items-center flex md:justify-start justify-center`}
             style={{ backgroundColor: "rgba(247, 248, 248, 0.8)" }}
           >
-            <div className="max-w-[392px]">
-              <h3 className="md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] md:text-left text-center font-bold mb-3">
-                {item?.title}
-              </h3>
-              <p className="md:text-[16px] md:leading-[26px] text-[14px] leading-[22px] md:text-left text-center font-normal uppercase mb-4">
-                {item?.tag}
-              </p>
-              <div className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal">
-                <BlockContent blocks={item?.content} />
+            <div className="flex flex-col justify-center items-center w-full">
+              <div className="max-w-[392px]">
+                <h3 className="md:text-[32px] md:leading-[38px] text-[20px] leading-[32px] md:text-left text-center font-bold mb-3">
+                  {item?.title}
+                </h3>
+                <p className="md:text-[16px] md:leading-[26px] text-[14px] leading-[22px] md:text-left text-center font-normal uppercase mb-4">
+                  {item?.tag}
+                </p>
+                <div className="md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] md:text-left text-center font-normal">
+                  <BlockContent blocks={item?.content} />
+                </div>
+                <ul className="flex gap-10 items-center mt-6 md:justify-start justify-center">
+                  {item?.social?.map((so: any, i: number) => {
+                    return (
+                      <li key={i}>
+                        <Link href={so.link} target="_blank">
+                          <Image
+                            src={so?.icon?.asset?.url}
+                            alt=""
+                            width={48}
+                            height={48}
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
-              <ul className="flex gap-10 items-center mt-6 md:justify-start justify-center">
-                {item?.social?.map((so: any, i: number) => {
-                  return (
-                    <li key={i}>
-                      <Link href={so.link} target="_blank">
-                        <Image src={so?.icon?.asset?.url} alt="" width={48} height={48} />
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
             </div>
           </div>
         </div>

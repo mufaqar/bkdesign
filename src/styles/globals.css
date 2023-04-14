@@ -267,7 +267,13 @@ select {
   margin-top: -100px !important;
 }
 
-
+.MuiMenu-paper{
+  background: #052121 !important;
+  color: white !important
+}
+.MuiSvgIcon-fontSizeMedium.MuiSelect-icon{
+  color: white !important
+}
 
 
 
