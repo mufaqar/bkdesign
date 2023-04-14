@@ -10,6 +10,8 @@ import {
   userAngebotQuery,
 } from "../config/query";
 
+
+
 export default function Index(props: any) {
   return <Home_Module data={props}/>;
 }

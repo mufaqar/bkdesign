@@ -72,7 +72,7 @@ const ProjectCrousel = ({ projectData }) => {
                     href={item?.video_production_url}
                     className="text-[#EAF9F9] bg-main px-6 mt-7 py-3 rounded-full"
                   >
-                    Videoproduktion
+                  ZUM PROJEKT
                   </Link>
                 </div>
               </div>

@@ -1,8 +1,43 @@
 import { SettingsContext } from "@/context/settingContext";
 import Image from "next/image";
 import React, { useContext } from "react";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import ListItemText from "@mui/material/ListItemText";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Checkbox from "@mui/material/Checkbox";
+import SettingsIcon from "@mui/icons-material/Settings";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+const names = ["Video production", "Branding", "Web design", "Web development"];
+
+{
+  /* <option selected>Benötigte Dienstleistungen</option> */
+}
 
 const Contectus = () => {
+  const [personName, setPersonName] = React.useState<string[]>([]);
+  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
+
   return (
     <div id="contact" className="pt-10 md:pt-4">
       <div className="mt-20 bg-[#042b2b] relative md:container md:mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 lg:gap-20 items-center bg-no-repeat bg-right-bottom bg-cover md:rounded-[32px]">
@@ -92,13 +127,38 @@ const Contectus = () => {
                 </svg>
               </div>
 
-              <select className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg ">
-                <option selected>Benötigte Dienstleistungen</option>
-                <option value="Video production">Video production</option>
-                <option value="Branding">Branding</option>
-                <option value="Web design">Web design</option>
-                <option value="Web development">Web development</option>
-              </select>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={personName}
+                className="bg-[#052121] pl-3 w-full shadow-md text-gray-100 text-sm p-0 rounded-lg"
+                onChange={handleChange}
+                input={<OutlinedInput label="Tag" />}
+                renderValue={(selected) => selected.join(", ")}
+                MenuProps={MenuProps}
+                startAdornment={
+                  <SettingsIcon
+                    style={{ color: "#368989" }}
+                    className="mr-1 pr-1"
+                  />
+                }
+              >
+                {names.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox
+                      checked={personName.indexOf(name) > -1}
+                      className="text-gray-400 border-white p-2"
+                      sx={{
+                        "&.Mui-checked": {
+                          color: '#fff',
+                        },
+                      }}
+                    />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+                ))}
+              </Select>
             </div>
 
             <div className="relative mb-6">
@@ -135,9 +195,16 @@ const Contectus = () => {
             height={200}
           />
         </div>
-        <img src="/images/contactbg.png" className="absolute hidden md:block right-0 bottom-0 rounded-br-[32px]" alt=""/>
-        <img src="/images/contact-mobile-bg.png" className="absolute md:hidden right-0 top-0 " alt=""/>
-       
+        <img
+          src="/images/contactbg.png"
+          className="absolute hidden md:block right-0 bottom-0 rounded-br-[32px]"
+          alt=""
+        />
+        <img
+          src="/images/contact-mobile-bg.png"
+          className="absolute md:hidden right-0 top-0 "
+          alt=""
+        />
       </div>
     </div>
   );

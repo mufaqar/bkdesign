@@ -87,14 +87,13 @@ function Home_Module({data}:any) {
         </div>
       </section>
 
-      <section className="relative md:mt-40 lg:mt-80 ">
+      <section id="angebot" className="relative md:mt-40 lg:mt-80 ">
         <WhatsWeOfferDesktop WhatWeOfferData={userAngebot} />
       </section>
 
-      <section className="" ref={myDivRef}></section>
+      <section id="project"  className="" ref={myDivRef}></section>
       <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <div
-          id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
         >
           <h1 className="subheading">Projekte</h1>
@@ -106,9 +105,8 @@ function Home_Module({data}:any) {
         <ProjectCrousel projectData={projects} />
       </div>
 
-      <section className="relative hidden md:block">
+      <section id="project" className="relative hidden md:block">
         <div
-          id="project"
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col w-full "
         >
           <div className="max-w-[600px] mx-auto text-center mb-12">
