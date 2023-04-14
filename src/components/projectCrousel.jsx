@@ -29,7 +29,7 @@ const ProjectCrousel = ({ projectData }) => {
   return (
     <div className="relative -mt-5 md:mt-0">
       <Slider ref={sliderRef} {...settings}>
-        {projectData.map((item, idx) => {
+        {projectData?.map((item, idx) => {
           return (
             <section
               key={idx}
@@ -48,7 +48,7 @@ const ProjectCrousel = ({ projectData }) => {
               <div className="flex  justify-center px-4 items-start sm:items-center md:items-start flex-col sm:flex-row md:flex-col py-7 md:p-10">
                 <div className="flex justify-center w-full items-center sm:items-start flex-col sm:justify-start md:items-start">
                   <div className="flex gap-4">
-                    {item?.buttons.map((b, i) => {
+                    {item?.buttons?.map((b, i) => {
                       return (
                         <Link
                           href={b?.link}
