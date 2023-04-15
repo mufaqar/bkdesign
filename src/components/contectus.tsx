@@ -20,7 +20,7 @@ const MenuProps = {
   },
 };
 
-const names = ["Video production", "Branding", "Web design", "Web development"];
+const names = ["Videoproduktion", "Branding", "Webdesign", "Webentwicklung"];
 
 {
   /* <option selected>Benötigte Dienstleistungen</option> */
