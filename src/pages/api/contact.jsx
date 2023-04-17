@@ -13,8 +13,8 @@ export default async (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: 'zunairgillani54@gmail.com',
-      pass: 'ihtgccruyornevlv',
+      user: process.env.EMAIL_FROM,
+      pass: process.env.EMIAL_PASSWORD_TOKEN,
     }
   });
 
