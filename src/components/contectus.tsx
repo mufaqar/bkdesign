@@ -41,8 +41,9 @@ const Contectus = () => {
     );
   };
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<any>();
-  
+  const { register, handleSubmit, resetField, formState: { errors } } = useForm<any>();
+  const [res, setRes] = useState('false')
+
   const onSubmit: SubmitHandler<any> = data => {
     const Formdata = {...data, categories}
     fetch('/api/contact', {
@@ -53,10 +54,16 @@ const Contectus = () => {
       },
       body: JSON.stringify(Formdata)
     }).then((res) => {
+      setRes('true')
       console.log('Response received')
       if (res.status === 200) {
         console.log('Response succeeded!')
         alert("Message Successfully send.!")
+        setRes('200')
+        resetField("name");
+        resetField("email");
+        resetField("message");
+        setCategories([]);
       }
     })
   };
@@ -213,6 +220,7 @@ const Contectus = () => {
               />
             </div>
           <input type="submit" className="text-main text-sm p-4 px-6 cursor-pointer hover:bg-gary-200 bg-white rounded-full w-full" value="KONTAKTIERE UNS"/>
+          <p className="text-white mt-2">{res === '200' ? 'Email Sended' : res === 'true' && 'Sending...'}</p>
           </form>
             
         

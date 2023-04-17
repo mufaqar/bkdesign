@@ -274,8 +274,8 @@ select {
 .MuiSvgIcon-fontSizeMedium.MuiSelect-icon{
   color: white !important
 }
-#demo-multiple-checkbox{
-  color: rbg(243,244,246) !important;
+#demo-multiple-checkbox, .css-1cq0fp4.MuiSelect-select{
+  color: rgb(243,244,246) !important;
 }
 
 
