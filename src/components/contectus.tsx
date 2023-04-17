@@ -25,9 +25,11 @@ const MenuProps = {
 
 const names = ["Videoproduktion", "Branding", "Webdesign", "Webentwicklung"];
 
-{
-  /* <option selected>Benötigte Dienstleistungen</option> */
-}
+type Inputs = {
+  name: string,
+  email: string,
+  message: string,
+};
 
 const Contectus = () => {
   const [categories, setCategories] = React.useState<string[]>([]);
@@ -41,10 +43,10 @@ const Contectus = () => {
     );
   };
 
-  const { register, handleSubmit, resetField, formState: { errors } } = useForm<any>();
+  const { register, handleSubmit, resetField, formState: { errors } } = useForm();
   const [res, setRes] = useState('false')
 
-  const onSubmit: SubmitHandler<any> = data => {
+  const onSubmit = (data:any) => {
     const Formdata = {...data, categories}
     fetch('/api/contact', {
       method: 'POST',
@@ -113,7 +115,6 @@ const Contectus = () => {
                 <input
                   type="text"
                   id="input-group-1"
-                  name="name"
                   {...register("name", { required: true })}
                   className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                   placeholder="Vor- und Nachname"
@@ -139,7 +140,6 @@ const Contectus = () => {
                   id="input-group-1"
                   className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                   placeholder="Email"
-                  name="email"
                   {...register("email", { required: true })}
                 />
               </div>
@@ -214,7 +214,6 @@ const Contectus = () => {
                 className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                 placeholder="Nachricht"
                 rows={7}
-                name="message"
                   {...register("message", { required: true })}
               />
             </div>
