@@ -1,6 +1,6 @@
 import { SettingsContext } from "@/context/settingContext";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -8,6 +8,9 @@ import ListItemText from "@mui/material/ListItemText";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { useForm } from "react-hook-form";
+
+
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -27,16 +30,37 @@ const names = ["Videoproduktion", "Branding", "Webdesign", "Webentwicklung"];
 }
 
 const Contectus = () => {
-  const [personName, setPersonName] = React.useState<string[]>([]);
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+  const [categories, setCategories] = React.useState<string[]>([]);
+  const handleChange = (event: SelectChangeEvent<typeof categories>) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
+    setCategories(
       // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
   };
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<any>();
+  
+  const onSubmit: SubmitHandler<any> = data => {
+    const Formdata = {...data, categories}
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Formdata)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        alert("Message Successfully send.!")
+      }
+    })
+  };
+  
 
   return (
     <div id="contact" className="pt-10 md:pt-4">
@@ -59,7 +83,7 @@ const Contectus = () => {
             anstehendes Projekt in der Pipeline? Zögern Sie nicht, uns zu
             kontaktieren!
           </p>
-          <form className="mt-10">
+          <form className="mt-10" onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative mb-6">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -83,6 +107,8 @@ const Contectus = () => {
                 <input
                   type="text"
                   id="input-group-1"
+                  name="name"
+                  {...register("name", { required: true })}
                   className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                   placeholder="Vor- und Nachname"
                 />
@@ -107,6 +133,8 @@ const Contectus = () => {
                   id="input-group-1"
                   className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                   placeholder="Email"
+                  name="email"
+                  {...register("email", { required: true })}
                 />
               </div>
             </div>
@@ -131,7 +159,7 @@ const Contectus = () => {
                 labelId="demo-multiple-checkbox-label"
                 id="demo-multiple-checkbox"
                 multiple
-                value={personName}
+                value={categories}
                 className="bg-[#052121] pl-3 w-full shadow-md text-gray-100 text-sm p-0 rounded-lg"
                 onChange={handleChange}
                 input={<OutlinedInput label="Tag" />}
@@ -147,7 +175,7 @@ const Contectus = () => {
                 {names.map((name) => (
                   <MenuItem key={name} value={name}>
                     <Checkbox
-                      checked={personName.indexOf(name) > -1}
+                      checked={categories.indexOf(name) > -1}
                       className="text-gray-400 border-white p-2"
                       sx={{
                         "&.Mui-checked": {
@@ -180,12 +208,14 @@ const Contectus = () => {
                 className="bg-[#052121] pl-10 w-full shadow-md text-gray-100 text-sm p-4 rounded-lg "
                 placeholder="Nachricht"
                 rows={7}
+                name="message"
+                  {...register("message", { required: true })}
               />
             </div>
+          <input type="submit" className="text-main text-sm p-4 px-6 cursor-pointer hover:bg-gary-200 bg-white rounded-full w-full" value="KONTAKTIERE UNS"/>
           </form>
-          <button className="text-main text-sm p-4 px-6 cursor-pointer hover:bg-gary-200 bg-white rounded-full w-full">
-            KONTAKTIERE UNS
-          </button>
+            
+        
         </div>
         <div className="p-10 lg:p-20 hidden md:block z-10">
           <Image
