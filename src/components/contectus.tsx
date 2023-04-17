@@ -58,7 +58,6 @@ const Contectus = () => {
       console.log('Response received')
       if (res.status === 200) {
         console.log('Response succeeded!')
-        alert("Message Successfully send.!")
         setRes('200')
         resetField("name");
         resetField("email");
