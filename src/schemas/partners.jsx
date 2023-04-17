@@ -12,10 +12,10 @@ export default {
       },
       fields: [
         {
-          name: "alt",
+          name: "link",
           type: "string",
-          title: "Alt",
-        },
+          title: "Link",
+        },  
       ],
     },
   ],
