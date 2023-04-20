@@ -21,7 +21,7 @@ function Partner({ partners }: any) {
         {partners.map((item: any, i: number) => {
           return (
             <div className="hover:cursor-pointer hover:scale-105" key={i}>
-              <Link target="_blank" href={item?.image?.link}><Image src={item?.image?.asset.url} alt={`logo`} width={150} height={100}/></Link>
+              <Link target="_blank" href={item?.partner_url}><Image src={item?.image?.asset.url} alt={`logo`} width={150} height={100}/></Link>
             </div>
           );
         })}

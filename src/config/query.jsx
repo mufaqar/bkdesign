@@ -5,6 +5,8 @@ export const partnersQuery = `*[_type == "partners"] | order(_createdAt asc) {
           },
           link
      }
+     ,
+     partner_url
 }`;
 
 export const projectsQuery = `*[_type == "projects"] | order(_createdAt asc) {
