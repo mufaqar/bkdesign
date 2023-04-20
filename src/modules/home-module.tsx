@@ -92,7 +92,7 @@ function Home_Module({data}:any) {
       </section>
 
       <section id="project"  className="" ref={myDivRef}></section>
-      <div className="block md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
+      <div className="block project_crousel md:hidden bg-[url('/images/project-mobile.png')] bg-no-repeat bg-contain bg-left-bottom">
         <div
           className="flex justify-center px-4 items-center pt-6 sm:pt-16 flex-col max-w-[600px] w-full mx-auto "
         >
@@ -139,7 +139,7 @@ function Home_Module({data}:any) {
       <About uberUns={uberUns}/>
 
       {openModel && (
-        <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-40 bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2">
+        <div className="fixed top-1/2 right-1/2 transform translate-x-1/2 z-[100] bg-black/20 w-full h-full flex flex-col justify-center items-center px-4 -translate-y-1/2">
           <Data_Protection />
         </div>
       )}

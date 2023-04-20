@@ -14,7 +14,7 @@ function Banner() {
                         Machen Sie Ihr Unternehmen sichtbar
                     </h1>
                     <p className='md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] lg:text-left text-center font-normal mb-12'>
-                        Klare Angebote, Klare Entscheidungen - ein gelungener Auftritt für Ihr Unternehmen!
+                        Klare Angebote, Klare Entscheidungen - ein gelungener Auftritt <br/>für Ihr Unternehmen!
                     </p>
                     <Link href="#contact" className='bg-[#108989] flex rounded-[50px] pl-10 p-1 pr-[3px] md:w-[336px] w-[273px] lg:ml-0 mx-auto'>
                         <span className='flex gap-8 justify-between items-center md:w-[336px] w-[273px]'>

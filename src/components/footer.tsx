@@ -121,17 +121,14 @@ function Footer() {
         </div>
       </div>
       <div className='container mx-auto h-[1px] bg-white/10'></div>
-      <div className='container hidden md:grid mx-auto items-center py-4 sm:grid-cols-2 grid-cols-1 gap-4 justify-between'>
-        <p className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-left text-center font-normal">
+      <div className='container flex flex-col md:flex-row mx-auto  items-center py-4  gap-4 justify-center md:justify-between '>
+        <p className="text-[#ADADAD] text-[12px] max-w-[200px] md:max-w-[100%] leading-[15px] sm:text-left text-center font-normal">
           Copyright © 2023 | Powered by BK Design GmbH | Alle Rechte vorbehalten
         </p>
         <button onClick={()=>setOpenModel(true)} className="text-[#ADADAD] text-[12px] leading-[15px] sm:text-right text-center font-normal">
           Impressum & Datenschutz
         </button>
       </div>
-      <p className="text-[#ADADAD] block md:hidden text-[12px] py-5 leading-[15px] sm:text-left text-center font-normal">
-      copyright © 2022 BK Design
-        </p>
       
     </footer>
   )
