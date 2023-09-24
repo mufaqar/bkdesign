@@ -1,7 +1,7 @@
 export default {
   title: 'Partners',
   name: 'partners',
-  type: 'documents',
+  type: 'document',
   fields: [
     {
       title: "Partner Title",
