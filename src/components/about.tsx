@@ -8,7 +8,6 @@ import Instagram from "../../public/svg/vector-3.svg";
 const BlockContent = require("@sanity/block-content-to-react");
 
 export default function About({ uberUns }: any) {
-  console.log("🚀 ~ file: about.tsx:11 ~ About ~ uberUns:", uberUns);
   return (
     <section id="about" className="py-20 px-4 pb-40 relative">
       <Image src={Bgright} alt="" className="absolute top-0 right-0 -z-10" />
