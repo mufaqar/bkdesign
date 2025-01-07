@@ -17,7 +17,7 @@ export default function About({ uberUns }: any) {
         </h2>
         <p className="md:text-[16px] md:leading-[26px] text-[14px] leading-[22px] text-center font-normal">
           Erfahren Sie mehr über die Personen, welche die BK Design GmbH auf die
-          Beine us
+          Beine 
         </p>
       </div>
       {uberUns.map((item: any, index: number) => (
