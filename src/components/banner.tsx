@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Main from '../../public/images/camera.png';
-
 function Banner() {
 
     return (
@@ -11,7 +10,7 @@ function Banner() {
                 <div className='flex lg:flex-row flex-col-reverse gap-10 mt-24 lg:mt-48 items-center container mx-auto'>
                     <div className='lg:w-1/2 w-full z-[1]'>
                         <h1 className='xl:text-[80px] lg:text-[50px] lg:leading-[60px] xl:leading-[92px] text-[44px] leading-[46px] lg:text-left text-center font-bold mb-4 xl:mb-10'>
-                            Machen Sie Ihr Unternehmen sichtbar
+                            Sie Ihr Unternehmen sichtbar
                         </h1>
                         <p className='md:text-[24px] md:leading-[38px] text-[16px] leading-[26px] lg:text-left text-center font-normal mb-12'>
                             Klare Angebote, klare Entscheidungen. Ein gelungener Auftritt<br />für Ihr Unternehmen!
