@@ -2,7 +2,7 @@ export const partnersQuery = `*[_type == "partners"] | order(_createdAt asc) {
      image{
           asset->{
                url
-          },
+       },
           link
      }
      ,
