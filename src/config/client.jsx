@@ -8,5 +8,4 @@ import { createClient } from "next-sanity";
       apiVersion,
       useCdn: false
   }
-  
   export const sanityClient = createClient(config);
