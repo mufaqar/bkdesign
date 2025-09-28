@@ -6,7 +6,6 @@ import Email from "../../public/svg/vector-1.svg";
 import Linkedin from "../../public/svg/vector-2.svg";
 import Instagram from "../../public/svg/vector-3.svg";
 const BlockContent = require("@sanity/block-content-to-react");
-
 export default function About({ uberUns }: any) {
   return (
     <section id="about" className="py-20 px-4 pb-40 relative">
